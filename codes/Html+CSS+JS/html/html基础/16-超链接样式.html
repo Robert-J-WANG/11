@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超链接样式</title>
+    <style>
+        /* 未被访问的 */
+        a:link{
+            color: brown;
+        }
+        /* 访问过的 */
+        a:visited{
+            color: blue;
+        }
+       /* 鼠标经过 */
+        a:hover{
+            display: block;
+            color: red;
+            font-weight: 700;
+        }
+        /* 鼠标点击未松开 */
+        a:active{
+            color: aqua;
+            font-size: 100px;
+        }
+      
+    </style>
+</head>
+<body>
+    <a href="https://www.google.com/">
+        google官网
+    </a>
+    <a href="#">
+        google官网
+    </a>
+</body>
+</html>

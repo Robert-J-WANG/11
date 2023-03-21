@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // continue:结束本次循环，从头开始执行剩余次数的循环
+        for (i = 1; i <= 5; i++) {
+            if (i == 3) {
+                continue; //直接跳出第3次，重新从第4次开始循环
+            }
+            alert('我吃了第' + i + '个包子');
+        }
+        // 求1～100之间，能被7整除的数之外的和
+        var sum = 0;
+        for (i = 1; i <= 100; i++) {
+            if (i % 7 == 0) {
+                continue;
+            }
+            sum += i
+        }
+        alert('能被7整除的数之外的和是' + sum);
+
+        // break:立即结束整个循环
+        for (i = 1; i <= 5; i++) {
+            if (i == 3) {
+                break; //立即结束整个循环
+            }
+            alert('我吃了第' + i + '个包子');
+        }
+    </script>
+</body>
+
+</html>

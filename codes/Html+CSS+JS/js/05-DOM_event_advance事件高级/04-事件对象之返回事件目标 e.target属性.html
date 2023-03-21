@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>123</div>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+    </ul>
+</body>
+
+<script>
+    // 事件对象属性e.target与this的区别:
+    // e.target,点击谁，就返回谁。this，绑定事件给谁，就返回谁
+
+    // 给div盒子添加事件,并点击div盒子
+    var div = document.querySelector('div');
+    div.addEventListener('click', function(e) {
+        console.log(e.target); // 点击谁，就打印出谁 <div>123</div>
+        console.log(this); // 绑定事件给谁，就打印出谁 <div>123</div>
+    });
+
+    // 给ul盒子添加事件,但是点击li
+    var ul = document.querySelector('ul');
+    ul.addEventListener('click', function(e) {
+        console.log(e.target); // 点击谁，就打印出谁<li>11</li>
+        console.log(this); // 绑定事件给谁，就打印出谁 <ul>...</ul>
+    });
+</script>
+
+</html>

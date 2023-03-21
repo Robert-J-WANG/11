@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border: 5px solid red;
+            /* 转化为BFC布局模式，解决父盒子高度塌陷问题 */
+            /* 方法1 */
+            /* overflow: hidden; */
+             /* 方法2 */
+            /* float: left; */
+             /* 方法3 */
+            /* position: absolute; */
+             /* 方法4 */
+            /* position: fixed; */
+             /* 方法5 */
+            /* display: inline-block; */
+             /* 方法6 */
+            display: flex;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+            border: 5px solid green;
+            /* 子盒子浮动后，父盒子的高度塌陷 */
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+    </div>
+</body>
+
+</html>

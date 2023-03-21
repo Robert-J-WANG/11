@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 组合选择器选择所有需要的标签 */
+        /* .icon-1,
+        .icon-2,
+        .icon-3 {
+            width: 35px;
+            height: 35px;
+            border: 1px solid red;
+            background-image: url(../images/un_login_third.png);
+        } */
+
+        /* 也可以利用属性选择器的模糊匹配， 来提取公共样式，简化代码 */
+        [class *=icon] {
+            width: 35px;
+            height: 35px;
+            border: 1px solid red;
+            background-image: url(../images/un_login_third.png);
+        }
+        [class *=h]{
+            background-position: 0 -35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="icon-1"></div>
+    <div class="icon-2"></div>
+    <div class="icon-3"></div>
+    <div class="myicon"></div>
+    <div class="h2-icon"></div>
+    <div class="hiconlon"></div>
+</body>
+
+</html>

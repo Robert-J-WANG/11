@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="10" style="border: 1px solid pink;"></textarea>
+    <button>发布</button>
+    <ul style="background-color: dodgerblue; width: 300px;">
+        <!-- <li>123</li> -->
+        <a href="javascript:;"></a>
+    </ul>
+    <script>
+        //1.获取元素节点
+        var txt = document.querySelector('textarea');
+        var btn = document.querySelector('button');
+        var ul = document.querySelector('ul');
+        //1.注册事件
+        // btn,onclick, txt.innerHTML
+        //3. 执行程序
+        btn.onclick = function() {
+            if (txt.value == '') {
+                alert('请输入内容');
+                return false;
+            } else {
+                //(1) 新建元素节点
+                var li = document.createElement('li');
+
+                //(2) 添加元素节点
+                // ul.appendChild(li); // 添加到后面
+                ul.insertBefore(li, ul.children[0]) //添加到前面
+
+                //(3) 设置新增元素的内容, 同时添加一个a链接，用于删除作用
+                li.innerHTML = txt.value + '<a href="javascript:;">delete</a>';
+                txt.value = ''; //清楚文本域内容
+            }
+
+            // //(4) 删除节点元素，删除当前的li
+            // 思路1
+            // // 因为a链接是在发布按钮里生产的，所以a链接的点击事件必须放在发布按钮里
+            // var asd = document.querySelectorAll('a');
+            // for (var i = 0; i < asd.length - 1; i++) {
+            //     asd[i].onclick = function() {
+            //         // 删除当前a链接对应的li, this.parentNode
+            //         ul.removeChild(this.parentNode);
+            //     }
+            // }
+
+            // 思路2： 每点击一次发布按钮，生成一个当前的li和链接a,所以不用循环所有的a链接
+            var a = li.querySelector('a');
+            a.onclick = function() {
+                ul.removeChild(li)
+            }
+        }
+    </script>
+</body>
+
+</html>

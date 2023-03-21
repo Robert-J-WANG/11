@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>边框</title>
+    <style>
+        .box {
+            /* width: 200px;
+            height: 200px; */
+            width: 0px;
+            height: 0px;
+            /* 只需设置一条边的颜色，其余颜色设置为透明，即可形成不同方向的等腰三角形 */
+            border-left: 100px solid transparent;
+            border-top: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 100px solid blue;
+        }
+        .box2{
+            width: 0px;
+            border: 100px solid transparent;
+            border-top: 100px solid yellow;
+        }
+        .box3{
+            float: left;
+            width: 0px;
+            border: 100px solid transparent;
+            border-right: 100px solid red;
+        }
+        .box4{
+            float: left;
+            width: 0px;
+            border: 100px solid transparent;
+            border-left: 100px solid green;
+        }
+        .left{
+            float: left;
+            margin-top: -100px;
+            margin-right: -100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left">
+        <div class="box"></div>
+        <div class="box2"></div>
+    </div>
+   
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+
+</html>

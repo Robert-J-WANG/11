@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin-top: 30px;
+            margin-bottom: 100px;
+        }
+
+        .box2 {
+
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            margin-top: 30px;
+        }
+
+        .box3 {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            margin-top: 30px;
+            margin-right: 30px;
+        }
+
+        .box4 {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin-top: 30px;
+            margin-left: 100px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <p>垂直方向时，两个盒子margin会重叠，取最大值 </p>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <hr>
+    <hr>
+    <p>水平方向盒子， margin不会重叠</p>
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 1000px;
+            height: 600px;
+            border: 1px solid red;
+            /* 块级弹性盒子 */
+            display: flex;
+            /* 子盒子换行 */
+            flex-wrap: wrap;
+
+            /* align-items: 主轴垂直方向的富裕空间 */
+            /* 默认值，将侧轴上的富裕空间均分，放在弹性项目之后 */
+            /* align-items: flex-start; */
+            /* 将侧轴上的富裕空间均分，放在弹性项目之前 */
+            /* align-items: flex-end; */
+            /* 让弹性项目在当前行居中 */
+            /* align-items: center; */
+            /* 弹性项目没有设置高度时。默认值，将弹性项目拉伸，盛满整个容器  */
+            align-items: stretch;
+            /* 每个弹性项目之间的间距完全一样，包括首位的间距 */
+            /* 所以弹性项目居中 */
+
+
+        }
+
+        .box {
+            width: 200px;
+            /* height: 200px; */
+            border: 1px solid green;
+            box-sizing: border-box;
+        }
+
+        .box2 {
+            width: 50px;
+            height: 50px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <!-- <div class="box2">box</div>
+            <div class="box2">box</div> -->
+        </div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+        <div class="box">box6</div>
+        <div class="box">box7</div>
+    </div>
+    <span>223</span>
+</body>
+
+</html>

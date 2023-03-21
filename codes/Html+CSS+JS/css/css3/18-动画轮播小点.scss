@@ -1,0 +1,51 @@
+body {
+    background-color: black;
+}
+
+.container {
+    width: 100px;
+    height: 20px;
+    // border: 1px solid red;
+
+    // 盒子水平垂直都居中
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    // 子盒子同行显示
+    display: flex;
+    justify-content: space-between;
+
+    .circle {
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border-radius: 50%;
+
+        // 使用动画
+        animation: move 1s linear infinite alternate;
+
+        &:nth-child(2){
+            animation: move 1s linear 0.3s infinite alternate backwards;
+        }
+        &:nth-child(3){
+            animation: move 1s linear 0.6s infinite alternate backwards;
+        }
+
+    }
+
+}
+// 创建关键帧动画
+@keyframes move {
+    from{
+        transform: scale(0);
+
+    }
+    to{
+        transform: scale(1);
+    }
+    
+}

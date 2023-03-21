@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            position: absolute;
+            top: 50px;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <span>夏雨荷</span>
+    <button>点击一下</button>
+    <script>
+        function animate(obj, target) {
+
+            clearInterval(obj.timer);
+
+            obj.timer = setInterval(function() {
+                // 设置渐变的步长值
+                // 每执行一次计时器，都要获得一下目标对象当前的位置，所以放在计时器内部
+                var step = (target - obj.offsetLeft) / 20;
+
+                if (obj.offsetLeft == target) {
+                    // 停止动画，本质是清除定时器
+                    clearInterval(obj.timer);
+                } else {
+                    //缓动动画原理：把每次加5的这个步长step设置为一个逐渐变小的值
+                    // step= （目标位置-当前位置）/20； // 20 的值可以自行设置
+                    obj.style.left = obj.offsetLeft + step + 'px';
+                }
+
+            }, 30)
+        }
+        // 2.获取元素对象
+        var span = document.querySelector('span');
+        var btn = document.querySelector('button');
+
+        // 3.调用动画函数ß
+        btn.addEventListener('click', function() {
+                animate(span, 800);
+            })
+            // 总结：
+            // 普通动画（匀速动画）：当前的位置+固定的值
+            // 缓动动画（减速动画）：当前的位置+变化的值（（目标位置-当前位置）/20 ）
+    </script>
+</body>
+
+</html>

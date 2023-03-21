@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 方法1. 两个盒子爹加 */
+        /* .box1{
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            background-image: repeating-linear-gradient(-45deg, red 0px, red 20px, yellow 20px, yellow 40px);
+            opacity: 0.3;
+            float: left;
+        }
+        .box2{
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            background-image: repeating-linear-gradient(45deg, red 0px, red 20px, yellow 20px, yellow 40px);
+            opacity: 0.3;
+        } */
+        /* 方法2. 一个盒子添加2个渐变背景, 2个渐变背景用逗号隔开.可添加多个渐变色 */
+        .box1 {
+            float: left;
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            background-image:
+                repeating-linear-gradient(-45deg, rgba(255, 0, 0, 0.3) 0px, rgba(255, 0, 0, 0.3) 20px, rgba(255, 255, 0, 0.3) 20px, rgba(255, 255, 0, 0.3) 40px),
+                repeating-linear-gradient(45deg, rgba(255, 0, 0, 0.3) 0px, rgba(255, 0, 0, 0.3) 20px, rgba(255, 255, 0, 0.3) 20px, rgba(255, 255, 0, 0.3) 40px),
+                repeating-linear-gradient(0deg, rgba(0, 255, 0, 0.3) 0px, rgba(0, 255, 0, 0.3) 20px, rgba(0, 0, 255, 0.3) 20px, rgba(0, 0, 255, 0.3) 40px),
+                repeating-linear-gradient(90deg, rgba(0, 255, 255, 0.3) 0px, rgba(0, 255, 255, 0.3) 20px, rgba(0, 0, 255, 0.3) 20px, rgba(0, 0, 255, 0.3) 40px);
+
+        }
+
+        /* 渐变背景可以和背景图片结合使用，用逗号隔开，但是图片必须放在后面 */
+        .box3 {
+            float: left;
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            background-image:
+                repeating-linear-gradient(0deg, rgba(0, 255, 0, 0.1) 0px, rgba(0, 255, 0, 0.1) 20px, rgba(0, 0, 255, 0.1) 20px, rgba(0, 0, 255, 0.1) 40px),
+                repeating-linear-gradient(90deg, rgba(0, 255, 255, 0.1) 0px, rgba(0, 255, 255, 0.1) 20px, rgba(0, 0, 255, 0.1) 20px, rgba(0, 0, 255, 0.1) 40px),
+                url(images/img2.jpeg);
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+
+</html>

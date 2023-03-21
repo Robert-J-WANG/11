@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <button id="red">红色背景</button>
+    <button id="green">绿色背景</button>
+    <div>我是div</div>
+
+
+    <script>
+        //1.  更改元素属性
+
+        // 点击不同按钮button，改变div盒子的属性 div.style
+
+        //(1). 获取事件源
+        var red = document.getElementById('red');
+        var green = document.getElementById('green');
+
+        var div = document.querySelector('div');
+
+        //(2). 事件类型，鼠标点击 btn.onclick, 
+        //(3). 事件处理程序，通过函数赋值来实现
+        red.onclick = function() {
+            div.style.backgroundColor = 'red';
+            div.style.width = '100px'
+            div.style.color = 'green';
+        }
+        green.onclick = function() {
+            div.style.backgroundColor = 'green';
+            div.style.width = '200px';
+            div.style.color = 'red';
+        }
+    </script>
+</body>
+
+</html>

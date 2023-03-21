@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/20-响应式布局之导航栏.min.css">
+</head>
+
+<body>
+    <header>响应式布局之导航栏</header>
+    <!-- 只在手机端 显示， pc断隐藏-->
+    <div class="box">
+        <div class="btn" id="mybtn">三</div>
+        <div class="logo">
+            <img src="images/adidas.png" alt="">
+        </div>
+
+    </div>
+
+    <!-- 电脑端 -->
+    <nav  id="dropmenu">
+        <ul>
+            <li><a href="">网站首页</a></li>
+            <li><a href="">新闻中心</a></li>
+            <li><a href="">网站首页</a></li>
+            <li><a href="">新闻中心</a></li>
+            <li><a href="">网站首页</a></li>
+            <li><a href="">新闻中心</a></li>
+            <li><a href="">网站首页</a></li>
+        </ul>
+        </div>
+    </nav>
+
+    <!-- 书写js代码来实现点击效果 jquery库-->
+
+    <!-- 引入jquery插件文件 -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"
+        integrity="sha256-8WqyJLuWKRBVhxXIL1jBDD7SDxU936oZkCnxQbWwJVw=" crossorigin="anonymous"></script>
+    <!-- 书写jquery代码实现点击效果 -->
+    <script>
+
+        // 页面加载完成之后，执行大括号里的代码
+        $(function () {
+            // jQuery代码
+            // js 点击事件
+            $("#mybtn").click(function(){
+                // 添加新的class. toggleClass自动检测当前标签是否有class名，有则取消，没有则添加
+                $("#mybtn").toggleClass("close");
+// 控制二级菜单的显示和隐藏
+                $("#dropmenu").toggleClass("show");
+            })
+
+           
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

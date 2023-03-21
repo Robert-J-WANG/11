@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border-radius: 50%;
+        }
+        
+        span {
+            position: absolute;
+            top: 50px;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <span>夏雨荷</span>
+    <script>
+        //动画函数封装
+        //1.函数封装一个动画函数,传递2个参数，目标对象和动画结束的参数
+        function animate(obj, target) {
+            var timer = setInterval(function() {
+                if (obj.offsetLeft >= target) {
+                    // 停止动画，本质是清除定时器
+                    clearInterval(timer)
+                }
+                obj.style.left = obj.offsetLeft + 5 + 'px';
+            }, 30)
+        }
+        // 2.获取元素对象
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        // 3.调用动画函数
+        animate(div, 400);
+        animate(span, 800);
+    </script>
+</body>
+
+</html>

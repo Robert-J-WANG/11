@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            border-bottom: 1px solid #ccc;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .box input {
+            width: 350px;
+            height: 40px;
+            border: 0px;
+            outline: none;
+        }
+        
+        .box label img {
+            width: 24px;
+            position: absolute;
+            top: 10px;
+            left: 370px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <label for="">
+            <img src="images/eyeClose.png" alt="">
+        </label>
+        <input type="password">
+    </div>
+    <script>
+        //1.  获取事件元素
+        var img = document.querySelector('img');
+        var input = document.querySelector('input');
+
+        //2.  绑定事件元素属性或内容
+        // img.onclick, this.scr
+        // input.type
+        //3. 执行程序：
+        var flag = 0;
+        img.onclick = function() {
+            if (flag == 0) {
+                this.src = 'images/eyeOpen.png';
+                input.type = 'text';
+                flag = 1;
+            } else {
+                this.src = 'images/eyeClose.png';
+                input.type = 'password';
+                flag = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

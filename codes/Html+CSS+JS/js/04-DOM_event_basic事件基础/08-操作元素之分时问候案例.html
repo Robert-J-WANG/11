@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <img src="" alt="" style="width: 200px;">
+    <div></div>
+    <script>
+        //1.  获取事件元素
+        var img = document.querySelector('img');
+        var div = document.querySelector('div');
+        //2.  绑定事件元素属性或内容
+        // img.src
+        // div.innerHTML
+        //3. 执行程序：判断当前时间，显示不同的属性和内容
+        var date = new Date();
+        var hour = date.getHours();
+        if (hour < 12) {
+            img.src = 'images/s.gif'
+            div.innerHTML = 'good moring'
+        } else if (hour >= 12 && hour < 18) {
+            img.src = 'images/x.gif'
+            div.innerHTML = 'good afternoon'
+        } else {
+            img.src = 'images/w.gif'
+            div.innerHTML = 'good night'
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        audio {
+            width: 600px;
+            height: 50px;
+
+            /* audio标签是行内块元素 */
+            margin: 0 auto;
+            display: block;
+        }
+
+        video {
+            width: 600px;
+            height: 300px;
+            /* video标签是行内块元素 */
+            margin: 20px auto;
+            display: block;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- controls:音频控件 -->
+    <!-- autoplay， loop， muted -->
+    <!-- source:视频资源 -->
+
+    <audio controls autoplay muted loop>
+        <source src="files/xw.128.mp3">
+    </audio>
+
+    <video controls autoplay muted loop>
+        <source src="files/videoplayback.mp4" type="">
+    </video>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 900px;
+            height: 600px;
+            border: 1px solid red;
+            /* 块级弹性盒子 */
+            display: flex;
+            /* 子盒子换行 */
+            flex-wrap: wrap;
+            justify-content: center;
+            /* align-items: center; */
+
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            border: 1px solid green;
+            box-sizing: border-box;
+        }
+
+        .box1 {
+            align-self: flex-start;
+        }
+
+        .box3 {
+            align-self: flex-end;
+        }
+
+        .box5 {
+            align-self: center;
+        }
+
+        .box7 {
+            width: 200px;
+            border: 1px solid green;
+            box-sizing: border-box;
+            align-self: stretch;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box box1">align-self: flex-start</div>
+        <div class="box">box2</div>
+        <div class="box box3">align-self: flex-end</div>
+        <div class="box">box4</div>
+        <div class="box box5">align-self: center</div>
+        <div class="box">box6</div>
+        <div class="box7">align-self: stretch</div>
+    </div>
+    <span>223</span>
+</body>
+
+</html>

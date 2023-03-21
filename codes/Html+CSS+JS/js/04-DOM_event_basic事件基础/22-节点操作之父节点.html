@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 225px;
+            height: 300px;
+            margin: 100px auto;
+        }
+        
+        .close_btn {
+            position: absolute;
+            top: 25px;
+            left: -40px;
+            width: 50px;
+            height: 50px;
+            background-color: #ccc;
+            font-size: 40px;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        淘宝二维码
+        <img src="images/taobao.png" alt="">
+        <i class="close_btn"> × </i>
+    </div>
+    <script>
+        // 节点操作，父级节点parentNode
+
+        // 操作样式属性，通过element.style
+        //1.  获取事件元素
+        var btn = document.querySelector('.close_btn');
+
+        // var box = document.querySelector('.box');// 元素操作获取的
+        //2.  绑定事件元素属性或内容
+        // close_btn.onclick, box.style
+
+        //3. 执行程序：
+        btn.onclick = function() {
+            // box.style.display = 'none'// 元素操作时的事件
+
+            // 使用父节点，获取父级盒子（最近以及的父节点），如果没有，返回值为null
+            this.parentNode.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            position: absolute;
+            top: 50px;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <span>夏雨荷</span>
+    <button class="btn500">点击一下到500</button>
+    <button class="btn800">点击一下到800</button>
+
+    <script>
+        // 对于多目标的移动（盒子的前进，盒子的后退）
+        function animate(obj, target) {
+
+            clearInterval(obj.timer);
+
+            obj.timer = setInterval(function() {
+                // 设置渐变的步长值
+
+                var step = (target - obj.offsetLeft) / 20;
+                // 但是，这样计算的step会出现小数的情况，会是目标的位置不准确，所以需要取整
+                // 对于多目标的移动（盒子的前进，盒子的后退），取整的方式也不同：前进时向上取整，后退时向下取整
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    // 停止动画，本质是清除定时器
+                    clearInterval(obj.timer);
+                } else {
+                    //缓动动画原理：把每次加5的这个步长step设置为一个逐渐变小的值
+                    // step= （目标位置-当前位置）/20； // 20 的值可以自行设置
+                    obj.style.left = obj.offsetLeft + step + 'px';
+                }
+                ß
+            }, 30)
+        }
+        // 2.获取元素对象
+        var span = document.querySelector('span');
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+
+
+        // 3.调用动画函数
+        btn500.addEventListener('click', function() {
+            console.log(500);
+            animate(span, 500);
+        });
+        btn800.addEventListener('click', function() {
+            console.log(800);
+            animate(span, 800);
+        })
+    </script>
+</body>
+
+</html>

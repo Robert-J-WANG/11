@@ -1,0 +1,83 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outer {
+  width: 1000px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 500px;
+}
+
+.outer .box {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 5s;
+  transform-origin: 100px 100px -100px;
+}
+
+.outer .box .item {
+  width: 100%;
+  height: 100%;
+  background-color: cornflowerblue;
+  border-radius: 30px;
+  font-size: 100px;
+  text-align: center;
+  line-height: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  transition: all 2s;
+}
+
+.outer .box .item:nth-child(2) {
+  transform-origin: right center;
+  transform: rotateY(-90deg);
+}
+
+.outer .box .item:nth-child(3) {
+  transform-origin: left center;
+  transform: rotateY(90deg);
+}
+
+.outer .box .item:nth-child(4) {
+  transform-origin: top center;
+  transform: rotateX(-90deg);
+}
+
+.outer .box .item:nth-child(5) {
+  transform-origin: bottom center;
+  transform: rotateX(90deg);
+}
+
+.outer .box .item:nth-child(6) {
+  transform: translateZ(-200px);
+}
+
+.outer .box:hover {
+  transform: rotate3d(1, 1, 1, 360deg);
+}
+
+@keyframes boxrotate {
+  from {
+    transform: rotate3d(1, 1, 1, 0deg);
+  }
+  to {
+    transform: rotate3d(1, 1, 1, 360deg);
+  }
+}
+
+.outer .box {
+  animation: boxrotate 1s infinite linear;
+}

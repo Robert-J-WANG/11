@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三列布局</title>
+    <style>
+        .container{
+            border: 1px solid red;
+
+        }
+        .left{
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+            float: left;
+
+        }
+        .right{
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            float: right;
+        }
+        .center{
+            height: 400px;
+            background-color: pink;
+            /* 可转换为BFC，从而实现左右盒子固定，中间盒子自适应布局 */
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">left</div>
+        <div class="right">right</div>
+        <div class="center">center</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var myYear = prompt('请输入年份');
+
+        // function BackDate(year) {
+
+        //     if (parseInt(year) == 2000) {
+        //         return 28;
+        //     } else {
+        //         return 29;
+        //     }
+
+        // }
+        // var result = BackDate(myYear);
+        // alert(myYear + '年二月有' + result + '天')
+
+
+
+        function BackDate() {
+            var myYear = prompt('请输入年份');
+            if (IsRun(myYear)) {
+
+                alert(myYear + '年二月有28天')
+            } else {
+                alert(myYear + '年二月有29天')
+            }
+        }
+        BackDate();
+
+        function IsRun(year) {
+            var flag = false
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                flag = true
+            }
+            return flag
+        }
+        // alert(IsRun(119));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+        
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: lawngreen;
+            margin: 25px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">father
+        <div class="son">son</div>
+    </div>
+
+</body>
+
+<script>
+    // dom 事件流三个阶段
+    // 1. js 代码中只能执行捕获或者冒泡其中的一个阶段
+    // 2. onclick 传统注册事件方式只能得到冒泡阶段
+    // 3. addEventListener 能得到2个阶段，第三个参数为true时，则处于捕获阶段，flase或不写是，处于冒泡阶段
+    // (1). 捕获阶段
+    // 给son盒子添加事件
+    var son = document.querySelector('.son');
+    son.addEventListener('click', function() {
+        alert('son');
+    }, true);
+    // 此时，给father盒子也添加事件，
+    var father = document.querySelector('.father');
+    father.addEventListener('click', function() {
+        alert('father');
+    }, true);
+    // 捕获阶段执行：点击是，会先弹出father盒子的事件，再弹出son盒子的事件 document>html>body>father>son
+
+    // (2). 冒泡阶段
+    // 给son盒子添加事件
+    var son = document.querySelector('.son');
+    son.addEventListener('click', function() {
+        alert('son');
+    }, );
+    // 此时，给father盒子也添加事件，
+    var father = document.querySelector('.father');
+    father.addEventListener('click', function() {
+        alert('father');
+    }, );
+    // 捕获阶段执行：点击时，会先弹出son盒子的事件，再弹出father盒子的事件 son>father>body>html>document
+</script>
+
+</html>

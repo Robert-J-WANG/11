@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="">
+    <button>发送</button>
+    <script>
+        // 1. 获取元素
+        var input = document.querySelector('input')
+        var button = document.querySelector('button')
+        var time = 3; //定义剩余的秒数
+
+        button.addEventListener('click', function() {
+            this.disabled = true;
+            // 设置定时器
+            var timer = setInterval(function() {
+                if (time == 0) {
+                    // 清除定时器，并恢复按钮设置
+                    clearInterval(timer);
+                    button.disabled = false; //恢复按钮的点击
+                    button.innerHTML = '发送'; //恢复按钮内容
+                    time = 3; // 倒计时从新开始
+                } else {
+                    button.innerHTML = '还剩' + time + '秒才能发送'
+                    time--;
+                }
+            }, 1000)
+        })
+    </script>
+</body>
+
+</html>

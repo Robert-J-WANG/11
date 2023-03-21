@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 窗口加载事件。可以将js文件放在任意位置
+        // 1. 传统加载事件，一次只加载一个函数
+        window.onload = function() {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function() {
+                alert('onload点击了')
+            })
+        }
+        window.onload = function() {
+                var btn = document.querySelector('button');
+                btn.addEventListener('click', function() {
+                    alert('onload又点击了')
+                })
+            }
+            //2.常用的监听加载事件，加载多个函数，依次执行
+        window.addEventListener('load', function() {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function() {
+                alert('load点击了')
+            })
+        })
+        window.addEventListener('load', function() {
+                var btn = document.querySelector('button');
+                btn.addEventListener('click', function() {
+                    alert('load又点击了')
+                })
+            })
+            //3,快捷加载事件 DOMContentLoaded，仅当dom元素加载完成就执行，不需要等待其他元素的加载，比如样式表，图片，flash等
+        window.addEventListener('DOMContentLoaded', function() {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function() {
+                alert('DOM点击了')
+            })
+        })
+        window.addEventListener('DOMContentLoaded', function() {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function() {
+                alert('DOM又点击了')
+            })
+        })
+    </script>
+    <button>点击一下</button>
+</body>
+
+</html>

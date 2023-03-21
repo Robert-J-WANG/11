@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        css样式自动继承 
+        */
+        div {
+            /* 1. font系列属性会被自动继承 */
+            font-size: 32px;
+            font-family: serif;
+            font-weight: 700;
+            font-style: italic;
+            /* 2. 文本样式会被自动继承 */
+            color: aqua;
+            text-align: center;
+            line-height: 20px;
+            text-decoration: line-through;
+            /* 3. 鼠标样式 自动继承 */
+            cursor: pointer;
+        }
+
+        ul {
+            /* 4. li标签的list-style 会自动继承自ul或ol; */
+            list-style: circle;
+            /* 3. 鼠标样式 自动继承 */
+            cursor: crosshair;
+        }
+
+        /* css样式的手动继承 需要添加inherit继承父元素的属性， 或者手动设置自己的属性 */
+        .box {
+            width: 300px;
+            height: 100px;
+            border: 1px solid red;
+            
+        }
+        .txt{
+           background-color: rgb(139, 48, 48);
+           /* 单独设置自己的属性 */
+           /* width: 200px; 
+           height: 50px; */
+           
+           /* 或者继承父元素的属性，需要添加inherit */
+           width: inherit;
+           height: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- <h1>have a good day</h1> -->
+        <p>hello</p>
+        <span>world</span>
+
+    </div>
+    <ul>
+        <li>hello</li>
+        <li>new</li>
+        <li>world</li>
+    </ul>
+    <nav class="box">
+        <header class="txt">
+            hello world
+        </header>
+    </nav>
+</body>
+
+</html>

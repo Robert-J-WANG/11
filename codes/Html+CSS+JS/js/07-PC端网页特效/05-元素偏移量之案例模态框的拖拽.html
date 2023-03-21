@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .login-header {
+            margin-bottom: 20px;
+        }
+        
+        .login {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 150px;
+            background-color: brown;
+            text-align: center;
+            line-height: 30px;
+            padding: 30px;
+            z-index: 999;
+        }
+        
+        .login-title {
+            cursor: move
+        }
+        
+        .close-login {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        
+        .login-bg {
+            display: none;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-header">
+        <a href="javascript:;" id="link">点击弹出登录框</a>
+    </div>
+    <div class="login">
+        <div class="login-title">登录会员
+            <span><a href="javascript:;" class="close-login">关闭</a></span>
+        </div>
+        <div class="login-input-content">
+            <div class="login-input">
+                <label for="">用户名</label>
+                <input type="text" placeholder="请输入用户名">
+            </div>
+            <div class="login-input">
+                <label for="">密码</label>
+                <input type="password" placeholder="请输入密码">
+            </div>
+        </div>
+        <div class="login-button">
+            <a href="javascript:;">登陆</a>
+        </div>
+    </div>
+    <!-- 遮盖层 -->
+    <div class="login-bg"></div>
+    <script>
+        // 1.获取事件源
+        var link = document.querySelector('#link');
+        var login = document.querySelector('.login');
+        var mask = document.querySelector('.login-bg');
+        var closeBtn = document.querySelector('.close-login');
+
+        // 2. 点击登陆链接弹出登录项和遮盖层
+        link.addEventListener('click', function() {
+            login.style.display = 'block'
+            mask.style.display = 'block'
+        })
+
+        // 3. 点击关闭链接隐藏登录项和遮盖层
+        closeBtn.addEventListener('click', function() {
+            login.style.display = 'none'
+            mask.style.display = 'none'
+        })
+
+        // 4. 设置鼠标拖拽()
+        //设置鼠标放在title里才能拖动 
+        var title = document.querySelector('.login-title')
+        title.addEventListener('mousedown', function(e) {
+
+            //1. 鼠标按下,触发拖拽，并获得鼠标在title盒子里的位置
+            var x = e.pageX - login.offsetLeft;
+            var y = e.pageY - login.offsetTop;
+
+            //2. 鼠标移动，计算login盒子的动态位置
+            document.addEventListener('mousemove', move)
+
+            function move(e) {
+                login.style.left = e.pageX - x + 'px';
+                login.style.top = e.pageY - y + 'px';
+            }
+
+            // 3.鼠标弹起， 解除鼠标移动事件
+            document.addEventListener('mouseup', function() {
+                document.removeEventListener('mousemove', move)
+            })
+
+        })
+    </script>
+</body>
+
+</html>

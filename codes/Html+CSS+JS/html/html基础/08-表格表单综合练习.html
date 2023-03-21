@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格和表单综合练习</title>
+</head>
+
+<body>
+    <form action="07-表单提交测试.html" method="post">
+        <!-- 7行2列的表格 -->
+        <table  align="center" cellpadding="5px" bgcolor="#eee" >
+            <tr>
+                <td align="right">
+                    <span style="color: red">*</span> 手机号码：
+                </td>
+                <td >
+                    <input type="text" name="tel"  style="width: 200px; height: 30px;">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>使用微博账号直接<a href="#" style="color:blue;">登录</a></td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <span style="color: red">*</span> 设置密码：
+                </td>
+                <td >
+                    <input type="password" name="psw"  style="width: 200px; height: 30px;">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <span style="color: red">*</span> 兴趣标签：
+                </td>
+                <td>
+                    <input type="checkbox" name="hobby" >新闻 
+                    <input type="checkbox" name="hobby" >娱乐 
+                    <input type="checkbox" name="hobby" >IT
+                    <input type="checkbox" name="hobby" >财经 
+                    <input type="checkbox" name="hobby" >新闻 
+                   <br>
+                    <input type="checkbox" name="hobby" >新闻
+                    <input type="checkbox" name="hobby" >新闻 
+                    <input type="checkbox" name="hobby" >新闻 
+                    <input type="checkbox" name="hobby" >新闻
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <span style="color: red">*</span> 发送短信：
+                </td>
+                <td>
+                    <input type="button" style="width: 150px; height:40px" value="点击发送短信">
+                    <!-- <button style="width: 150px; height:40px">点击发送短信</button> -->
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <a href="#" style="color: red;">《新浪网页安全服务协议》</a>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                   <button type="reset">点击重置</button>
+                   <button type="submit">点击提交</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

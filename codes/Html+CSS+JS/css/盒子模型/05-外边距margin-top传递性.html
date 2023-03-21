@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+           
+        }
+
+        .box1 {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            /* margin-top: 30px; */
+
+            /* 
+            解决子盒子margin-top传递的方法：
+            1， 给父盒子添加border, 颜色设为透明, 但是会撑大原来盒子的大小
+            2， 给父盒子添加padding值，也会撑大盒子
+            3. overflow：hidden, 不会撑大盒子
+             */
+
+             /* border: 1px solid transparent;  */
+             /* padding: 1px; */
+             overflow: hidden;
+            
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            /* 
+            子盒子的margin-top会传递给父盒子
+            原因：子盒子的margin-top找不到父盒子的边界来计算margin-top的值，就直接传递给父盒子
+            解决方案：给父盒子添加边界 
+            */
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+
+</html>

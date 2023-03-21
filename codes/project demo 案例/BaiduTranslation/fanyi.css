@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}
+
+.header .container {
+    height: 88px;
+}
+
+.header .container .logo {
+    float: left;
+    width: 200px;
+    height: 100%;
+    /* background-color: pink; */
+}
+
+.header .container .logo img {
+    height: 45px;
+    margin-top: 22px;
+}
+
+.header .container .nav {
+    float: right;
+    /* width: 400px; */
+    height: 100%;
+    /* background-color: aqua; */
+}
+
+.header .container .nav ul {
+    list-style: none;
+    overflow: hidden;
+}
+
+.header .container .nav ul li {
+    float: left;
+    height: 88px;
+    line-height: 88px;
+    margin: 0 30px;
+    padding: 0 15px;
+    /* 文字属性在a标签中设置，原因：a标签自动样式，li中设置文字属性，a标签权重高，会覆盖掉 */
+    /* font-size: 18px;
+    font-family: "yahei";
+    color: #222; */
+}
+
+.header .container .nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "Microsoft YaHei";
+    color: #222;
+}
+
+/* li.active li后面没有空格，表示并且 */
+.header .container .nav ul li.active {
+    border-bottom: 3px solid #108cee;
+}
+
+.header .container .nav ul li.active a {
+    color: #108cee;
+}
+
+/* 鼠标移入父盒子ul，取消其子盒子li标签的hover属性，改为最初的属性 */
+.header .container .nav ul:hover li {
+    border: 0;
+}
+
+.header .container .nav ul:hover li a {
+    color: #222;
+}
+
+/* 鼠标移入当前li标签，添加hover对应的属性 
+这个选择器的权重与上述大盒子ul选择器的权重相等，想要期中用，位置已放在其后*/
+.header .container .nav ul li:hover {
+    border-bottom: 3px solid #108cee;
+}
+
+.header .container .nav ul li:hover a {
+    color: #108cee;
+}
+
+/* banner 部分 */
+.banner {
+    height: 480px;
+    background-image: url(images/app-banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.banner .container {
+    padding-top: 150px;
+    padding-left: 30px;
+
+}
+
+.banner .container h1 {
+    color: white;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.banner .container span {
+    display: inline-block;
+    color: white;
+    font-size: 22px;
+    letter-spacing: 8px;
+    padding: 0 20px;
+    border-right: 1px solid white;
+    height: 20px;
+    line-height: 20px;
+
+}
+
+.banner .container span.first {
+    padding-left: 0;
+}
+
+.banner .container span.last {
+    border-right: 0;
+}
+
+.banner .container .btn {
+    margin-top: 37px;
+    width: 180px;
+    height: 46px;
+    color: white;
+    font-size: 18px;
+    background-color: #6582a7;
+    text-align: center;
+    line-height: 46px;
+    border-radius: 23px;
+    letter-spacing: 3px;
+}
+
+/* content 部分 */
+.content .container {
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+.content .container .item {
+    float: left;
+    width: 400px;
+    /* height: 300px; */
+    /* border: 1px solid green; */
+    margin-bottom: 30px;
+    padding: 0 30px;
+   box-sizing: border-box;
+   
+
+}
+.content .container .item .image{
+    float: left;
+    width: 70px;
+    height: 130px;
+    /* background-color: aqua; */
+}
+.content .container .item .image img{
+    width: 50px;
+}
+.content .container .item .text{
+    float: left;
+    width: 270px;
+    height: 130px;
+    /* background-color: orange; */
+}
+.content .container .item .text h3{
+    color: #333;
+    font-size: 22px;
+}
+.content .container .item .text p{
+    color: #c6c6c6;
+    font-size: 16px;
+    line-height: 30px;
+    margin-top: 10px;
+
+}

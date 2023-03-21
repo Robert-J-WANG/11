@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            position: absolute;
+            top: 50px;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <span>夏雨荷</span>
+    <button class="btn500">点击一下到500</button>
+    <button class="btn800">点击一下到800</button>
+
+    <script>
+        // 添加回调函数（点击按钮，完成动画后，再改变盒子的背景颜色）
+        // 给动画函数添加一个形参 callback，用于传递值（这个值是一个函数，称为回调函数）
+        function animate(obj, target, callback) {
+
+            clearInterval(obj.timer);
+
+            obj.timer = setInterval(function() {
+
+                var step = (target - obj.offsetLeft) / 20;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+
+                    clearInterval(obj.timer);
+                    // 这个函数放在计时器的最后，等计时器结束，才调用这个函数
+                    if (callback) { //判断是否有回调函数
+                        // 调用函数
+                        callback();
+                    }
+
+                } else {
+
+                    obj.style.left = obj.offsetLeft + step + 'px';
+                };
+
+            }, 30);
+
+        }
+        // 2.获取元素对象
+        var span = document.querySelector('span');
+        var btn500 = document.querySelector('.btn500');
+        var btn800 = document.querySelector('.btn800');
+
+
+        // 3.调用动画函数
+        btn500.addEventListener('click', function() {
+            console.log(500);
+            animate(span, 500, function() {
+                span.style.backgroundColor = 'blue';
+            });
+        });
+        btn800.addEventListener('click', function() {
+            console.log(800);
+            animate(span, 800, function() { // 把这个函数当做一个实参传递给动画函数
+                span.style.backgroundColor = "green";
+            });
+        })
+    </script>
+</body>
+
+</html>

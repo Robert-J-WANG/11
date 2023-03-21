@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="10" style="border: 1px solid pink;"></textarea>
+    <button>发布</button>
+    <ul style="background-color: dodgerblue; width: 300px;">
+        <!-- <li>123</li> -->
+    </ul>
+    <script>
+        //1.获取元素节点
+        var txt = document.querySelector('textarea');
+        var btn = document.querySelector('button');
+        var ul = document.querySelector('ul');
+        //1.注册事件
+        // btn,onclick, txt.innerHTML
+        //3. 执行程序
+        btn.onclick = function() {
+            if (txt.value == '') {
+                alert('请输入内容');
+                return false;
+            } else {
+                // 新建元素节点
+                var li = document.createElement('li');
+
+                // 添加元素节点
+                // ul.appendChild(li); // 添加到后面
+                ul.insertBefore(li, ul.children[0]) //添加到前面
+                    // 设置新增元素的内容
+                li.innerHTML = txt.value;
+                txt.value = ''; //清楚文本域内容
+            }
+        }
+    </script>
+</body>
+
+</html>

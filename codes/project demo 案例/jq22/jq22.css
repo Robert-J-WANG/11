@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: content-box; */
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+}
+
+.logo {
+    /* background-color: pink; */
+    float: left;
+    width: 100px;
+    height: 100%;
+}
+
+.logo img {
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.nav {
+    /* background-color: pink; */
+    float: right;
+    width: 770px;
+    height: 100%;
+}
+
+.nav li {
+    float: left;
+    list-style: none;
+}
+
+.nav li a {
+    display: block;
+    width: 110px;
+    height: 50px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #9d9d9d;
+    text-align: center;
+    line-height: 50px;
+}
+
+.nav li a:hover {
+    color: white;
+}
+
+/* banner  start*/
+.banner {
+    width: 100%;
+    height: 400px;
+
+    background-image: url(../jq22/images/bbg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+
+}
+
+.banner .container {
+    width: 730px;
+    margin: 0 auto;
+    margin-top: 100px;
+    /* border: 1px solid red; */
+
+}
+
+.banner .container .image {
+    text-align: center;
+}
+
+.banner .container .link {
+    text-align: right;
+    margin-top: 10px;
+
+}
+
+.banner .container .link a {
+    text-decoration: none;
+    color: #999;
+    font-size: 14px;
+}
+
+.banner .container .search {
+    height: 60px;
+    margin-top: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.banner .container .search .icon {
+    float: left;
+    width: 50px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.banner .container .search .ipt {
+    float: left;
+    width: 510px;
+    height: 60px;
+    /* background-color: darkmagenta; */
+}
+
+.banner .container .search .ipt input {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* 更改input里placeholder文字的样式 */
+.banner .container .search .ipt input::placeholder {
+    color: #999;
+}
+
+.banner .container .search .btn {
+    float: left;
+    width: 170px;
+    background-color: #cd502b;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* nav2 start  */
+.nav2 {
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav2 .container {
+    width: 1200px;
+    height: 100%;
+    /* border: 1px solid red; */
+    margin: 0 auto;
+}
+
+.nav2 .container ul {
+    list-style: none;
+}
+
+.nav2 .container ul li {
+    float: left;
+    width: 120px;
+    height: 50px;
+
+    text-align: center;
+    line-height: 50px;
+}
+
+.nav2 .container ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #69696d;
+    border-right: 1px solid black;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+}
+
+.nav2 .container ul li .li-last {
+    border-right: none;
+}
+
+/* content部分 */
+.content {
+    width: 1200px;
+    /* border: 1px solid red; */
+    margin: 30px auto;
+}
+
+.content .title {
+    padding: 15px;
+}
+
+/* 清楚浮动 */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.content .container .item {
+    width: 280px;
+    /* height: 200px; */
+    border: 1px solid rgb(202, 200, 200);
+    float: left;
+    box-sizing: border-box;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.content .container .item .image img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.content .container .item h3 {
+    color: #78bce4;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.content .container .item p {
+    color: #666;
+    font-size: 14px;
+    padding-left: 10px;
+    line-height: 24px;
+}
+
+.content .container .item .cover {
+    padding: 40px 10px 15px;
+    border-bottom: 1px solid #222;
+}
+
+.content .container .item .cover span {
+    padding-left: 5px;
+}
+
+.content .container .item .stat {
+    height: 35px;
+    line-height: 35px;
+    color: #8b8b8b;
+    font-size: 14px;
+    padding-left: 10px;
+    word-spacing: 10px;
+    background-color: #f6f6f6;
+    border-top: 2px solid white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.content .container .item .stat span {
+    float: right;
+    width: 30px;
+    height: 35px;
+    line-height: 35px;
+}

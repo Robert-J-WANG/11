@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .change {
+            background-color: red;
+            width: 300px;
+            border-radius: 50px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">helloworld</div>
+    <script>
+        //1. 通过element.style，操作样式属性，适用于需要修改的样式比较少，或功能简单时
+        //(1).  获取事件元素
+        var div = document.querySelector('div');
+
+        //(2).  绑定事件元素属性或内容
+        // div.onclick, this.style
+
+        //(3). 执行程序：多次使用this.style， 程序繁琐
+        // div.onclick = function() {
+        //     this.style.backgroundColor = 'red';
+        //     this.style.width = '300px'
+        //     this.style.borderRadius = '50px'
+        //     this.style.color = 'white'
+        // }
+
+        // //2. 通过修改元素的className,来统一修改样式，推荐使用。把需要修改的样式全部写进一个新的类名里
+        // div.onclick = function() {
+        //     this.className = 'change' // 点击事件时，给div元素添加新的样式,类名为change
+        // }
+
+        //3. className会直接覆盖掉原先的类名，想要保留原来的类名（追加类名）可以写成以下
+        div.onclick = function() {
+            this.className += ' change' // 注意：change前有一个空格
+        }
+    </script>
+</body>
+
+</html>

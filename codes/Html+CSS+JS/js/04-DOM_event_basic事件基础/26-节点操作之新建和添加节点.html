@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>123</li>
+    </ul>
+    <script>
+        // 获取ul元素节点
+        var ul = document.querySelector('ul');
+
+        // 1. 新建元素节点
+        var li = document.createElement('li')
+
+        // 2. 把新建的节点添加到指定位置
+        // (1) 给父节点追加子节点，新的子节点在最后面。类似于push
+        ul.appendChild(li);
+
+        // (2) 指定新节点的位置 node.insertBefore(child, 指定元素)
+        var lili = document.createElement('li')
+        ul.insertBefore(lili, ul.children[0])
+
+        // 3. 需要给页面添加新的元素，需要2步：新建元素，添加元素
+    </script>
+</body>
+
+</html>

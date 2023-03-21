@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 1000px;
+            height: 300px;
+            text-align: center;
+            line-height: 200px;
+            border: 1px solid red;
+            /* 块级弹性盒子 */
+            display: flex;
+            /* 拓展：
+            1. 给项目设置默认宽度 flex-basis: ;
+            2. 项目属性的复合写法 flex: flex-grow, flex-shrink, flex-basis;
+            3. 项目的现实顺序 order; */
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid green;
+            box-sizing: border-box;
+        }
+
+        .box:nth-child(1) {
+            flex-basis: 300px;
+        }
+
+        .box:nth-child(2) {
+            flex: 0 0 250px;
+        }
+
+        .box:nth-child(3) {
+            order: -1;
+        }
+
+        .box:nth-child(4) {
+            order: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">box1 flex-basis: 300px;</div>
+        <div class="box">box2 flex: 4 0 250px;</div>
+        <div class="box">box3 order: -1;</div>
+        <div class="box">box4 </div>
+
+    </div>
+    <span> 
+        1. 给项目设置默认宽度 flex-basis: ;<br>
+        2. 项目属性的复合写法 flex: flex-grow, flex-shrink, flex-basis;<br>
+        3. 项目的现实顺序 order; 
+    </span>
+</body>
+
+</html>

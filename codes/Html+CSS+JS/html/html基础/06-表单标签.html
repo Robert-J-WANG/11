@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单标签</title>
+</head>
+
+<body>
+    <!-- form表单标签  -->
+    <!-- 
+        action:设置提交服务器的地址
+        method:提交数据到服务器的方法
+            get:从服务器读取数据，也可以提交表单数据，但是数据会显示在网页地址栏中
+            post:提交数据到服务器，数据不会显示
+
+        对于表单组件中的属性
+        name:设置数据的存储位置
+        value:数据存储的具体的值
+     -->
+    <form action="07-表单提交测试.html" method="post"
+    style="width:400px; background-color: #eee; margin: 0 auto; padding: 50px;">
+        <h3>普通输入框</h3>
+        <label for="name">name</label>
+        <input type="text" id="name" placeholder="name" name="mingzi">
+
+        <h3>邮箱输入框</h3>
+        <label for="email">email</label>
+        <input type="email" id="email" placeholder="email" name="youxiang">
+
+        <h3>密码输入框</h3>
+        <label for="password">password</label>
+        <input type="password" id="password" placeholder="password" name="mima">
+
+        <h3>日期输入框</h3>
+        <label for="DOB">DOB</label>
+        <input type="date" id="DOB" placeholder="2022/09/28" name="riqi">
+
+        <h3>单选框</h3>
+        <label for="male"> male</label>
+        <input type="radio" id="male" name="gender" value="nan">
+        <label for="female"> female</label>
+        <input type="radio" id="female" name="gender" value="nv">
+        <label for="other"> other</label>
+        <input type="radio" id="other" name="gender" value="qita" checked>
+
+        <h3>复选框</h3>
+        <h4>hobby:</h4>
+        <label for="reading">reading</label>
+        <input type="checkbox" id="reading" name="hobby" value="dushu">
+        <label for="writing">writing</label>
+        <input type="checkbox" id="writing" name="hobby" value="xiezuo">
+        <label for="swimming">swimming</label>
+        <input type="checkbox" name="" id="swimming" name="hobby" value="youyong" checked>
+
+        <h3>下拉列表</h3>
+        <h4>subjects:</h4>
+        <!-- multiple 可以实现多选 -->
+        <select name="xueke" multiple style="width: 100px;">
+            <option value="shuxue">math</option>
+            <option value="wangye" selected>web</option>
+            <option value="kehuduan">GUI</option>
+            <option value="chenxu">APP</option>
+        </select>
+
+        <h3>文本域</h3>
+        <h4>blog</h4>
+        <textarea id="blog" cols="30" rows="10" placeholder="write your blog here" name="blog"></textarea>
+        <br>
+        <h3>按钮</h3>
+        <h4>input按钮</h4>
+        <input type="button" value="普通按钮">
+        <input type="reset" value="重置按钮">
+        <input type="submit" value="提交按钮">
+    
+        <!-- 推荐使用 button 标签 -->
+        <h4>H5 button按钮</h4>
+        <button>普通按钮</button>
+        <button type="button">普通按钮</button>
+        <button type="reset">重置按钮</button>
+        <button type="submit">提交按钮</button>
+
+    </form>
+</body>
+
+</html>

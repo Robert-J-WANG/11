@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            /* 转化为BFC布局模式，解决父解决盒子垂直方向margin重叠的问题 */
+            /* 方法1 */
+            /* overflow: hidden; */
+             /* 方法2 */
+            /* float: left; */
+             /* 方法3 */
+            /* position: absolute; */
+             /* 方法4 */
+            /* position: fixed; */
+             /* 方法5 */
+            /* display: inline-block; */
+             /* 方法6 */
+            display: flex;
+            /* 现在盒子垂直方向margin值为50+80=130px， 而不是80px */
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            border: 1px solid green;
+            margin-bottom: 50px;
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(63, 188, 28);
+            border: 1px solid rgb(176, 9, 76);
+            margin-top: 80px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box1">box1</div>
+    <!-- 将box2放置在一个新盒子中，设置新盒子为BFC区域，从而解决盒子垂直方向margin重叠的问题 -->
+    <div class="container">
+        <div class="box2">box2</div>
+    </div>
+</body>
+
+</html>

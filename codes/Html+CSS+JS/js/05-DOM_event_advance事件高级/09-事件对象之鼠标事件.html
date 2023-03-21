@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <p>无法复制我了</p>
+
+    <script>
+        //1. 能选中目标，点击右键，无法弹出菜单栏，但还是可以使用control c, control v复制
+        document.addEventListener('contextmenu', function(e) {
+                e.preventDefault()
+            })
+            //2. 禁止鼠标选中,根本无法选中目标
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault()
+        })
+    </script>
+</body>
+
+
+
+</html>

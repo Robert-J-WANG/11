@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            margin: 100px;
+            border: 2px solid green;
+            padding: 20px;
+        }
+        
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        //1. 获取元素位置offset
+        var father = document.querySelector('.father')
+        var son = document.querySelector('.son')
+
+        // 获取元素带有定位父元素的偏移量
+        console.log(father.offsetLeft); //108 其定位父元素是body
+        console.log(father.offsetTop); //100
+
+        // 如果父元素有定位，则已父元素为准
+        console.log(son.offsetLeft); //50
+        console.log(son.offsetTop); //50
+
+        // // 如果父元素没有定位，则以body为准
+        // console.log(son.offsetLeft); //138
+        // console.log(son.offsetTop); //100
+
+        // 2. 获取元素大小offset.高度和宽度：border+padding+width(height)
+        console.log(father.offsetWidth); //244 
+        console.log(father.offsetHeight); //244
+
+        // 3. offsetParent 获取有定位的父元素，如果没有则返回body
+        console.log(son.offsetParent); //获取有定位的父元素，如果没有则返回body
+        console.log(son.parentNode); // 返回的是最近一级的父节点，不管有没有定位
+    </script>
+</body>
+
+</html>

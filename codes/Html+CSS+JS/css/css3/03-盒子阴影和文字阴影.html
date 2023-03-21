@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            margin: 100px auto;
+            width: 400px;
+            height: 200px;
+            border: 1px solid red;
+            border-radius: 50px;
+            text-align: center;
+            line-height: 200px;
+            
+            /* 文字阴影：添加多个阴影，用逗号隔开 */
+            text-shadow: 2px 2px 1px red,-2px -2px 1px green;
+
+            /* 盒子阴影：添加多个阴影，用逗号隔开 */
+            box-shadow: 5px 5px 10px 1px red, -5px -5px 10px 1px green;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: 5px 5px 10px 1px red, -5px -5px 10px 1px green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        我是文字，请给我加阴影
+    </div>
+    <div class="box2"></div>
+</body>
+</html>

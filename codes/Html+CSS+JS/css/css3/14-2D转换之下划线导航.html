@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+    
+    nav ul{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #999;
+    }
+    nav ul li {
+        /* width: 200px; */
+        height: 35px;
+        /* border: 1px solid red; */
+        text-align: center;
+        line-height: 35px;
+        padding:0 30px;
+        
+    }
+    nav ul li::after{
+        content: "";
+        display: block;
+        border: 2px solid blue;
+        transform: scale(0);
+        transition: all 1s;
+    }
+    nav ul li:hover::after{
+        transform: scale(1);
+    }
+    nav ul li:hover a{
+        font-weight: bold;
+        color: blue;
+    }
+</style>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="">关于我们</a>
+                <!-- ::after -->
+            </li>
+            <li><a href="">产品展示</a></li>
+            <li><a href="">公司介绍</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>

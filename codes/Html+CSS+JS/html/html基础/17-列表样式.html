@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            border: 1px solid green;
+        }
+        li{
+            border: 1px solid red;
+        }
+        /* list-style-type 默认是小黑点 */
+        /* list-style-position:小黑点位置，默认是outside  */
+        .l1 {
+            /* none 无 */
+            list-style-type: none;
+        }
+
+        .l2 {
+            /* 空心圆 */
+            list-style-type: circle;
+            list-style-position: inside;
+        }
+
+        .l3 {
+            /* 实心方框 */
+            list-style-type: square;
+            list-style-position: outside;
+        }
+
+        .l4 {
+           /* 数字，变成ol有序列表 */
+           list-style-type: decimal;
+           list-style-position: inside;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- ul/ol 默认上下margin 16px, padding-left 40px; -->
+    <ul>
+        <li >java编程</li>
+        <li class="l1">web前端</li>
+        <li class="l2">python后端</li>
+        <li class="l3">UI设计</li>
+        <li class="l4">ds数据库</li>
+    </ul>
+</body>
+
+</html>

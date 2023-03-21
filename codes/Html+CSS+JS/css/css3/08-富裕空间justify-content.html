@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 1000px;
+            height: 300px;
+            border: 1px solid red;
+            /* 块级弹性盒子 */
+            display: flex;
+
+            /* justify-content: 主轴方向的富裕空间 */
+            /* 默认值，将主轴方向的富裕空间放在弹性项目之后 */
+            /* justify-content: start; */
+            /* 将主轴方向的富裕空间放在弹性项目之前 */
+            /* justify-content: end; */
+            /* 首位紧靠着弹性容器，中间均分富裕空间 */
+            /* justify-content: space-between; */
+            /* 每个弹性项目两侧均分 */
+            /* justify-content: space-around; */
+            /* 每个弹性项目之间的间距完全一样，包括首位的间距 */
+            /* justify-content: space-evenly; */
+            /* 所以弹性项目居中 */
+            justify-content: center;
+
+
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid green;
+            box-sizing: border-box;
+        }
+
+        .box2 {
+            width: 50px;
+            height: 50px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="box2">box</div>
+            <div class="box2">box</div>
+        </div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+    </div>
+    <span>223</span>
+</body>
+
+</html>

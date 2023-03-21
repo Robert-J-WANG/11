@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // 递增运算符++num=num+1，前置. 先自加1， 再返回值
+        // var age = 10;
+        // ++age; //age=age+1;
+        // console.log(age); //11
+        // console.log(age + 10); //21
+        // console.log(age + age); //22
+        // console.log(++age); //12
+        // console.log(++age + 10); //23
+        // console.log(++age + age); //28
+        // console.log(++age + ++age); //31
+
+        // 递增运算符num++=num+1,后置， 先返回值，再自加1
+        var age = 10;
+        age++; //age=age+1
+        console.log(age); //11, age=11
+        console.log(age + 10); //21, age=11
+        console.log(age + age); //22, age=11
+        console.log(age++); //11, age=12
+        console.log(age++ + 10); //22, age=13
+        console.log(age++ + age); //27, age=14
+        console.log(age++ + age++); //29, age=16
+        // 比较运算符
+        console.log(3 >= 5); //false
+        console.log(3 <= 4); //true
+        // =会默认转换数据类型
+        console.log(3 <= '4'); //true
+        console.log(3 == 5); //false
+        console.log('hello' == 'hallo') // false;
+            // 等于=, 会默认转换数据类型
+        console.log(18 == '18'); //true
+        console.log(18 === '18'); //false
+        // 不等于：!=
+        console.log(18 != 18) //false;
+            // = 会默认转换数据类型
+        console.log(18 != '18'); //false
+        console.log(18 !== "18"); //true
+
+        // 逻辑运算符
+        // 1，逻辑与&&, and
+        console.log(3 > 5 && 3 > 2); //false
+        console.log(3 < 5 && 3 > 2); //true
+        // 2,逻辑或||, or
+        console.log(3 > 5 || 3 > 2); //true
+        console.log(3 < 5 || 3 > 2); //true
+        // 3,逻辑非！, not
+        console.log(!true); //false
+        console.log(!3 > 5 || 3 > 2); //true
+        console.log(!(3 > 5 || 3 > 2)); //false
+
+        //逻辑短路（逻辑中断）
+        // 1.逻辑与
+        console.log(123 && 456); //456
+        console.log(0 && 456); //0
+        console.log(123 && 456 && 789); //789
+        console.log(123 && 0 && 789); //0
+        // 2.逻辑或
+        console.log(123 || 456); //123
+        console.log(0 || 456); //456
+        console.log(123 || 0 || 789); //123
+        console.log(0 || 0 || 789); //789
+        //3. 逻辑中断会影响代码运行的结果
+        var number = 10;
+        console.log(123 || number++);
+        console.log(number); // 结果是0
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>

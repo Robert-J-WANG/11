@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入在线的bootstrap的css文件 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- 顺序不能乱 -->
+    <!-- 先引入本地jquery的js文件 -->
+    <!-- 可新建一个空的js文件，再打开官网jquery文件，复制粘贴到自建的js文件中，保存即可 -->
+    <script src="js/jQuery.3.6.3.js"></script>
+    <!-- 再引入bootstrap的在线js文件 -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <style>
+        div {
+            border: 1px solid red;
+            /* height: 40px; */
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 栅格必须放在row容器里。相当于一个弹性盒子 -->
+        <div class="row">
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">1</div>
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">1</div>
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">1</div>
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">1</div>
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">1</div>
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">1</div>
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">1</div>
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">1</div>
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">1</div>
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">1</div>
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">1</div>
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">1</div>
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">1</div>
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">1</div>
+            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">1</div>
+        </div>
+        <div class="row">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">2</div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">3</div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">3</div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">3</div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">3</div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">3</div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">3</div>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">4</div>
+        </div>
+        <div class="row">
+            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5">5</div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">6</div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">6</div>
+        </div>
+        <div class="row">
+            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">7</div>
+        </div>
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">8</div>
+        </div>
+        <div class="row">
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">9</div>
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">9</div>
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">9</div>
+        </div>
+        <div class="row">
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10">10</div>
+        </div>
+        <div class="row">
+            <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11">11</div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">12</div>
+        </div>
+    </div>
+    <p>均分,嵌套与偏移</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg">1</div>
+        </div>
+        <div class="row">
+            <div class="col-lg">
+                <div class="row">
+                    <div class="col-lg-3">3</div>
+                    <div class="col-lg-9">9</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg">2</div>
+            <div class="col-lg">
+                <div class="row">
+                    <div class="col-lg-4">4</div>
+                    <div class="col-lg-8">8</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg">3</div>
+            <div class="col-lg">3</div>
+            <div class="col-lg offset-2">2</div>
+        </div>
+
+    </div>
+</body>
+
+</html>

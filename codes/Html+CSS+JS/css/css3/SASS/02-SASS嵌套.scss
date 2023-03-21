@@ -1,0 +1,63 @@
+header {
+    width: 100%;
+    height: 100px;
+    background-color: aliceblue;
+
+    nav {
+        width: 800px;
+        height: 80px;
+
+        ul {
+            list-style: none;
+
+            li {
+                width: 200px;
+                font-size: 20px;
+                padding: 0 30px;
+                border: 1px solid red;
+
+                // background-color: tomato;
+                a {
+                    text-decoration: none;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    p {
+                        color: crimson;
+                        font-weight: bold;
+                    }
+
+                    span {
+                        color: aqua;
+                    }
+                }
+
+                // 直接:hover的话会生成带空格的:hover css样式，代表给后代hover
+                // :hover{
+                //     background-color: aquamarine;
+                // }
+                // 在之前添加&符号，代表父级，会生成次次选择器本身的hover属性
+                &:hover {
+                    background-color: rgb(16, 5, 69);
+                }
+
+                &::before {
+                    content: "hello";
+                    display: block;
+                    width: 100px;
+
+                    background-color: tomato;
+                }
+
+                &::after {
+                    content: "hello";
+                    display: block;
+                    width: 100px;
+                    background-color: tomato;
+                }
+
+            }
+        }
+    }
+}

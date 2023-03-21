@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,
+        nav {
+            width: 400px;
+            background-color: brown;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">点击查看当前时间</button>
+    <div style="background-color: brown;">点击按钮才能显示</div>
+    <nav>打开页面直接显示</nav>
+    <div class="div"></div>
+    <p>
+        我是文字
+        <span>123</span>
+    </p>
+
+
+    <script>
+        // 1. element.innerHTML 和 element.innerText 改变元素内容,推荐使用innerHTML
+
+        // 点击按钮button，改变div盒子的内容
+
+        //(1). 获取事件源
+        var btn = document.getElementById('btn');
+        var div = document.querySelector('div');
+
+        //(2). 事件类型，鼠标点击 btn.onclick, div.innerHTML
+        //(3). 事件处理程序，通过函数赋值来实现
+        btn.onclick = function() {
+            // div.innerHTML = '2023-1-1'
+            // (4) 动态显示当前时间，调用当前时间的函数
+            div.innerHTML = getTime();
+
+        }
+
+        // 案例3: 封装一个当前时间的函数，调用此案例的函数
+        function getTime() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var dates = date.getDate();
+            var day = date.getDay();
+            // day 值是数字0-6，可以作为数字week的索引来输出对应的中文星期数 
+            var week = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+
+            var h = date.getHours();
+            h = h < 10 ? '0' + h : h;
+            var m = date.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            var s = date.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            return '当前时间是:' + year + '年' + month + '月' + dates + '日，' + week[day] + '，' + h + '点' + m + '分' + s + '秒'
+        }
+        //(4). 也可以不用给元素注册时间，打开页面直接更改元素内容
+        // 获取事件源
+        var nav = document.querySelector('nav');
+        // 更改内容
+        nav.innerHTML = getTime();
+
+        // 2. element.innerHTML 和 element.innerText 的区别
+
+        //(1). innerText 不识别html标签，非标准，读取内容时会自动去除空格和换行
+        var div1 = document.querySelector('.div');
+        div1.innerText = '<strong>今天是:</strong> 2023年' //不识别html标签
+
+        //(2). innerHTML 识别html标签，wsc标准，保留空格和换行
+        div1.innerHTML = '<strong>今天是:</strong> 2023年' // 识别html标签
+
+        //(3). 这两个属性能也读取元素里面的内容
+        var p = document.querySelector('p');
+        alert(p.innerText); // 不识别html标签,自动去除空格和换行
+        alert(p.innerHTML); // 识别html标签,保留空格和换行
+    </script>
+</body>
+
+</html>

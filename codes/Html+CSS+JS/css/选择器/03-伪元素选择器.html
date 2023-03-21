@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            border: 1px solid red;
+        }
+        /* 第一个字符 */
+        div::first-letter{
+            color: blue;
+            font-weight: 700;
+        }
+        /* 第一行 */
+        div::first-line{
+            background-color: chocolate;
+        }
+        /* 在前面添加，与content配合使用，content内容可以是空，但不能省略，是行元素，可转换成块或行内块 */
+        div::before{
+            content: "hello hello";
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            border: 2px solid yellow;
+        }
+        /* 在后面添加，与content配合使用，content内容可以是空，但不能省略，是行元素，可转换成块或行内块 */
+        div::after{
+            content:"" ;
+            display: block;
+            width: 200px;
+            height: 100px;
+            background-color: rgb(151, 26, 26);
+        }
+      
+    </style>
+</head>
+
+<body>
+    <div>
+        为激励大家学习，即日起，凡是连续完成学习并在此视频下方评论区打卡满15天者（请另外自行开贴否则无效），将获得蜗牛学苑本门课程一阶段原创（电子）教材，打卡30天获得二阶段教材，打卡45天获得三阶段教材，打卡60天获得四阶段教材。
+        PS：由于参加活动的小伙伴较多，各位打卡挑战完成，请私聊小蜗，核对无误后将按照顺序依次给出权限。（不要一个劲儿催，催更慢……）
+    </div>
+</body>
+
+</html>

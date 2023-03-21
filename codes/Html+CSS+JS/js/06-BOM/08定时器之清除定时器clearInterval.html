@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button class="start">开始定时</button>
+    <button class="stop">停止定时</button>
+    <script>
+        var start = document.querySelector('.start');
+        var stop = document.querySelector('.stop');
+        var timer = null; // timer 放在函数外面，为全局标量，所有函数都能访问，并初始设为一个空对象，防止报错（undefined)
+        start.addEventListener('click', function() {
+            timer = setInterval(function() {
+                console.log('开始了');
+            }, 1000);
+        })
+        stop.addEventListener('click', function() {
+            clearInterval(timer)
+        })
+    </script>
+</body>
+
+</html>

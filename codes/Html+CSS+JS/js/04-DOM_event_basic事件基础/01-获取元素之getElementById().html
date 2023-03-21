@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="time">2023-1-1</div>
+    <script>
+        //1. 因为文档是从上而下加载，所以先得有标签，所以script代码放在标签的后面
+        //2. 参数ID是大小写敏感的字符串，需要加引号
+        //3. 返回的是一个元素对象
+        var timer = document.getElementById('time');
+        console.log(timer); //<div id="time">2023-1-1</div> 元素
+        console.log(typeof(timer)); //object 对象
+        //4. console.dir 打印出返回元素对象，更好滴查看里面的属性和方法
+        console.dir(timer);
+    </script>
+</body>
+
+</html>

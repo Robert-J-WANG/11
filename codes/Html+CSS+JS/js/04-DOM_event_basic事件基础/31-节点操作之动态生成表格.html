@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-spacing: 0px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        th,
+        td {
+            border: 1px solid green;
+        }
+        
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        // 1.先准备学生的数据，数据存放在一个对象中，多个对象放在一个数组里
+        var datas = [{
+            name: '熊大',
+            subject: 'javascript',
+            score: 100
+        }, {
+            name: '熊二',
+            subject: 'javascript',
+            score: 99
+        }, {
+            name: '光头强',
+            subject: 'javascript',
+            score: 98
+        }, ]
+
+        // 2.往tbody里创建行，有几个人（通过数组的长度），我们就常见几行
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < datas.length; i++) { //外面的for循环管行
+            // (1) 创建tr
+            var tr = document.createElement('tr');
+            // (2) 添加tr
+            tbody.appendChild(tr);
+            // (3)行里面创建有数据的单元格td，单元格的数量取决于对象里的属性个数， for循环遍历对象
+            for (var k in datas[i]) { // 里面的for循环 管列
+                //创建单元格td 
+                var td = document.createElement('td');
+                //添加td
+                tr.appendChild(td);
+                // 把对象里的属性值传递给td
+                td.innerHTML = datas[i][k];
+                // 遍历对象 for(k in obj){
+                //     k 得到的是属性名
+                //     obj[k] 得到的是属性值, obj=datas[i]
+                // }
+            }
+            //（4）行里创建删除操作的单元格
+            //创建
+            var td = document.createElement('td');
+            //添加
+            tr.appendChild(td);
+            //添加内容
+            td.innerHTML = '<a href="javascript:;">delete</a>'
+        }
+        // 3.注册删除事件
+        var asd = document.querySelectorAll('a');
+        for (var i = 0; i < asd.length; i++) {
+            asd[i].onclick = function() {
+                // 点击a链接，删除a链接所在的行tr，行tr是a链接爸爸（td)的爸爸，this.parentNode.parentNode
+                tbody.removeChild(this.parentNode.parentNode)
+            }
+        }
+    </script>
+</body>
+
+</html>

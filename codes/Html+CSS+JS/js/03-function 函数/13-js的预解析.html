@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // 1, 相关的问题：
+        // 1 问：
+        // console.log(num); ////结果是undefined
+        // ————————————————————————————————————————————————————————————————————————
+
+        // 2问：
+        // console.log(num);////结果也是undefined, 坑1
+        // var num=10;
+        // ————————————————————————————————————————————————————————————————————————
+
+        // 3问：
+        fn();
+
+        function fn() {
+            console.log(11); ////结果是11
+        }
+        // ————————————————————————————————————————————————————————————————————————
+
+        // 4问
+        // fun();
+        // var fun=function(){
+        //     console.log(22);////结果报错。坑2
+        // }
+        // ————————————————————————————————————————————————————————————————————————
+
+        // 2.js引擎运行时，分为2步：预解析和代码执行
+        // （1）预解析：js引擎会把js里面所以的变量var和函数function 提升到当前作用域的最前面
+        // （2）代码执行：再按照代码书写的顺序从上往下执行
+        // ————————————————————————————————————————————————————————————————————————
+        // 3.预解析分为变量预解析（变量提升）和函数预解析（函数提升）
+        // （1）变量提升：把所以的变量申明提升到 当前作用域 的最前面，不提升赋值操作
+        // （2）函数提升：把所有函数 申明提升到 当前作用域 的最前面，不调用函数
+        // ————————————————————————————————————————————————————————————————————————
+        // 4.分析上面的2个坑
+        // ————————————————————————————————————————————————————————————————————————
+        // 坑1
+        console.log(num); ////结果也是undefined, 坑1
+        var num = 10;
+        //相当于：
+        var num; ////把变量申明提升到当前作用域的最前面
+        console.log(num);
+        num = 10; ////变量赋值不提升
+        // ————————————————————————————————————————————————————————————————————————
+        // 坑2
+        fun();
+        var fun = function() {
+                console.log(22); ////结果报错。坑2
+            }
+            //相当于：
+        var fun; ////把变量申明提升到当前作用域最前面
+        fun(); ////此时调用函数的话，次函数还没定义
+        fun = function() {
+            console.log(22);
+        };
+        // ————————————————————————————————————————————————————————————————————————
+        // 5.预解析练习
+        // 案例1：结果是？
+        var num = 10;
+        fun()
+
+        function fun() {
+            console.log(num);
+            var num = 20;
+        }
+        // 预解析为：
+        var num;
+
+        function fun() {
+            var num;
+            console.log(num); ////就近原则。结果是undefined
+            num = 20;
+
+        };
+        num = 10;
+        fun();
+        // ————————————————————————————————————————————————————————————————————————
+        // 案例2：结果是？
+        var num = 10;
+
+        function fn() {
+            console.log(num);
+            var num = 20;
+            console.log(num);
+        }
+        fn();
+        // 预解析为：
+        var num;
+
+        function fn() {
+            var num;
+            console.log(num); ////undefined
+            num = 20;
+            console.log(num); ////20
+        }
+        num = 10;
+        fn();
+        // ————————————————————————————————————————————————————————————————————————
+        // 案例3：结果是？
+        var a = 18;
+        f1();
+
+        function f1() {
+            var b = 9;
+            console.log(a);
+            console.log(b);
+            var a = '123;'
+        }
+        // 预解析为：
+        var a;
+
+        function f1() {
+            var b;
+            var a;
+            b = 9;
+            console.log(a); ////undefined
+            console.log(b); ////9
+            a = '123;'
+        };
+        a = 18;
+        f1();
+        // ————————————————————————————————————————————————————————————————————————
+        // 案例4：结果是？
+        f1();
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+        function f1() {
+            var a = b = c = 9; ////(var a=9;b=9;c=9。b和c直接赋值了，没有申明)与（集体申明var a=9,b=9,c=9）有区别
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        // 预解析为：
+        function f1() {
+            var a;
+            a = 9;
+            b = 9;
+            c = 9;
+            console.log(a); ///9
+            console.log(b); ///9
+            console.log(c); ///9
+        };
+        f1();
+        console.log(a); //// undefined,变量a局部变量
+        console.log(b); //// 9, b=9直接赋值，是全局变量
+        console.log(c); //// 9, c=9直接赋值，是全局变量
+    </script>
+    <title>js的预解析</title>
+</head>
+
+<body>
+
+</body>
+
+</html>

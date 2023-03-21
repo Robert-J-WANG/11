@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+</body>
+
+<script>
+    var divs = document.querySelectorAll('div')
+
+    // 1. 传统注册事件方式,删除事件
+    //添加事件
+    divs[0].onclick = function() {
+        alert('11');
+
+        //删除事件  
+        this.onclick = null;
+    };
+
+    // 2. 添加监听注册事件
+    //删除函数是，要指定删除的是哪个函数，所以绑定的函数不能用匿名函数的方式（function)，可以创建一个自定义函数(比如fn)
+    // divs.[1].addEventListener('click',function(){}) //// 绑定的是匿名函数
+    divs[1].addEventListener('click', fn); // 绑定的自定义函数，方便删除。不加小括号
+
+    // 自定义一个函数fn
+    function fn() {
+        alert('33');
+        this.removeEventListener('click', fn); // 删除函数fn
+    }
+</script>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // 1.数组（Array)定义：
+        // 一组变量的集合。数组里的元素可以是任意类型的变量，每个变量用逗号隔开
+        // ======================================
+        // ======================================
+        // 2.创建数组
+        //  方法一：利用new Array()创建数组
+        // var name=new Array();创建了一个空数组
+        // 方法二：利用字面量创建数组[]
+        // var name1=[];创建了一个空数组
+        // var name2 = [1, 2, 'pink老师', true];
+        // ======================================
+        // ======================================
+        // 3,访问数组的元素
+        // 利用数组元素的索引号获得（访问）：数组名[索引号]，数组元素的索引号从0开始
+        // console.log(name2[3]);能找到上面数组的最后一个元素true
+        // alert(name2[2]):会弹出元素“pink老师”
+        // ======================================
+        // ======================================
+        // 4，遍历数组：把数组中的每个元素从头到尾访问一遍
+        // 方法是通过for循环
+        // var arr = ['丰厚', 1, true];
+        // for (var i = 0; i < 3; i++) {
+        //     console.log(arr[i]);
+        // }
+        // ======================================
+        // ======================================
+        // 5.数组长度：数组名.length,动态检测数组元素的个数，不是元素的索引号
+        // var arr = ['关羽', '张飞', '赵云', '马超', '黄忠', '魏延', ]
+        // for (var i = 0; i < arr.length; i++) {
+        //     console.log(arr[i]);
+        // }
+        // alert(arr.length)
+        // ======================================
+        // ======================================
+        // 练习1：计算一个数组里元素的总和以及平均数
+        var arr = [12, 46, 53, 26, 88];
+        var sum = 0;
+        var avrage = 0;
+        for (var i = 0; i < arr.length; i++) {
+            sum = sum + arr[i]
+        };
+        avrage = sum / arr.length;
+        console.log('总和是' + sum, '平均值是' + avrage)
+            // ======================================
+            // ======================================
+            // 练习2：计算一个数组里元素的最大值和最小值
+        var arr = [12, 46, 53, 26, 88, 990, 223, 9];
+        var max = arr[0];
+        var min = arr[0];
+        for (var i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i]
+            };
+            if (arr[i] < min) {
+                min = arr[i]
+            }
+        }
+        alert('最大值是' + max);
+        alert('最小值是' + min);
+        // ======================================
+        // ======================================
+        // 练习3：数组里字符串的连接
+        var arr = ['red', 'green', 'blue', 'pink', 'black', 'white', ];
+        var str = '';
+        // 给需要添加的符号定义一个变量dep, 只需赋予这个变量相应的 值， 便可更改连接的符号
+        var dep = '#';
+        for (var i = 0; i < arr.length; i++) {
+            str += arr[i] + dep
+        }
+        alert(str);
+        // ======================================
+        // ======================================
+        // 6.新增数组元素：
+        // 方法一，修改数组长度length
+        // var arr3 = ['green', 'red', 'blue'];
+        // alert(arr3.length); 弹出数字3
+        // arr3.length = 5;修改数组长度为5
+        // console.log(arr3.length);
+        // // 结果是5
+        // alert(arr3[3], arr3[4]);输出结果是undefined
+        // 方法二，修改索引号,追加元素
+        // arr3[3] = 'yello';
+        // arr3[4] = 'black';
+        // 这里是替换元素
+        // arr3[0] = 'pink';
+        // alert(arr3);
+        // alert(arr3.length);
+        // 注意：不要直接个数组名赋值
+        // arr3 = 'pink老师'
+        // alert(arr3);
+        // 数组里面的元素会丢失
+        // ======================================
+        // ======================================
+        // 练习1：新建一个数组，里面存放10个整数（1~10）
+        var arr4 = [];
+        for (var i = 0; i < 10; i++) {
+            arr4[i] = i + 1;
+        }
+        alert(arr4);
+        // ======================================
+        // ======================================
+        // 练习2；将数组[2,0,6,1,77,0,52,0,25,7]中大于等于10的元素选出来，放入新数组
+        // 方法一
+        var arr6 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var arr5 = [];
+        var j = 0;
+        for (var x = 0; x < arr6.length; x++) {
+            if (arr6[x] >= 10) {
+                arr5[j] = arr6[x]
+                j++;
+            }
+        }
+        alert(arr5)
+            // 方法二
+        var arr6 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var arr5 = [];
+
+        for (var x = 0; x < arr6.length; x++) {
+            if (arr6[x] >= 10) {
+                arr5[arr5.length] = arr6[x]
+            }
+        }
+        alert(arr5)
+            // 练习3；将数组[2,0,6,1,77,0,52,0,25,7]中等于0的元素剔除
+        var arr7 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var arr8 = [];
+        for (var i = 0; i < arr7.length; i++) {
+            if (arr7[i] != 0) {
+                arr8[arr8.length] = arr7[i]
+            }
+        }
+        alert(arr8)
+            // 练习4；将数组[2,0,6,1,77,0,52,0,25,7]中的元素点到顺序
+        var arr9 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var arr10 = [];
+        for (var i = 0; i < arr9.length; i++) {
+            arr10[i] = arr9[arr9.length - i - 1]
+        };
+        // 或者
+        for (var i = arr9.length - 1; i >= 0; i--) {
+            arr10[arr10.length] = arr9[i]
+        };
+        alert(arr10)
+            // 练习5；冒泡排序。将数组[2,0,6,1,77,0,52,0,25,7]中的元素等于0的剔除，并排序
+        var arr11 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var arr12 = [];
+        for (var i = 0; i < arr11.length; i++) {
+            if (arr11[i] != 0) {
+                arr12[arr12.length] = arr11[i]
+            }
+        }
+        for (var j = 0; j < arr12.length; j++) {
+            for (var x = 0; x < arr12.length; x++) {
+                if (arr12[x] > arr12[x + 1]) {
+                    var temp = arr12[x + 1];
+                    arr12[x + 1] = arr12[x];
+                    arr12[x] = temp;
+                }
+            }
+        }
+        alert(arr12)
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>

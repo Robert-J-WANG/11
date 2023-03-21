@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <ul>
+        <li>点击我</li>
+        <li>点击我</li>
+        <li>点击我</li>
+        <li>点击我</li>
+        <li>点击我</li>
+    </ul>
+
+    <script>
+        // 事件委托，利用事件冒泡原理，给父元素注册事件，点击某个子元素，触发事件。从而不用给每个子元素注册事件。
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click', function(e) {
+            alert('hello'); // 点击任何一个li，都会弹出对话框
+
+            // 利用e.target属性能获得当前被点击的元素，从而给此元素设置属性
+            // 排他思想
+            for (var i = 0; i < this.children.length; i++) {
+                this.children[i].style.backgroundColor = '';
+            }
+            e.target.style.backgroundColor = 'pink'
+        }, );
+    </script>
+</body>
+
+
+
+</html>

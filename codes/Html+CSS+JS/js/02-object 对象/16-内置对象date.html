@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Date() 对象
+        // 1 描述
+        // Date()日期对象， 是一个构造函数，必须使用关键词new来调用创建我们需要的日期对象，而math本身就是一个对象，不需要用new 再来调用并创建。
+        // Date()的使用，类似数组和对象的创建：
+        var arr = new Array(); // 创建了一个数组对象实例，Array()本质也是一个构造函数，需要使用关键字new来调用创建
+        var obj = new Object(); // 创建了一个对象实例，Object()本质也是一个构造函数，需要使用关键字new来调用创建
+
+        // // 2 使用方法
+        // // Date()函数无参数，返回的是当前时间
+        // var now = new Date();
+        // alert(now);
+        // // Date()函数有参数，参数的格式，数字型：2020,11,01 ， 字符串型：'2020-11-1 8:8:8'
+        // var date1 = new Date(2020, 11, 01);
+        // alert(date1); // 数字型输出的是12月，不是11月
+        // var date2 = new Date('2020-11-1 8:8:8');
+        // alert(date2); // 字符串型输出的是11月，推荐使用字符串型
+
+        //3.日期的格式化,年月日，星期
+
+        // var date = new Date();
+        // alert(date.getFullYear()); //返回当前日期的年
+        // alert(date.getMonth() + 1); //返回当前日期的月， getMonth()返回的月份会小一个月，从0-11，当前月份需要加一
+        // alert(date.getDate()); //返回当前日期的日
+        // alert(date.getDay()); //返回当前日期的星期， 0-6， 周一是1，周六是6，周日是0
+
+        // 案例1：输出一个格式化的当前日期
+        // var today = new Date();
+        // var year = today.getFullYear();
+        // var month = today.getMonth() + 1;
+        // var dates = today.getDate();
+        // var day = today.getDay();
+        // // day 值是数字0-6，可以作为数字week的索引来输出对应的中文星期数 
+        // var week = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        // alert('今天是' + year + '年' + month + '月' + dates + '日，' + week[day])
+
+        // // 案例2: 封装一个格式化某一天日期的函数
+        // function getDate(value) {
+        //     var someday = new Date(value);
+        //     var year = someday.getFullYear();
+        //     var month = someday.getMonth() + 1;
+        //     var dates = someday.getDate();
+        //     var day = someday.getDay();
+        //     // day 值是数字0-6，可以作为数字week的索引来输出对应的中文星期数 
+        //     var week = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        //     return '今天是' + year + '年' + month + '月' + dates + '日，' + week[day];
+        // }
+        // alert(getDate('2022-12-12'));
+
+        // //4. 日期的格式化,时分秒
+        // var date = new Date();
+        // alert(date.getHours()); // 当前小时
+        // alert(date.getMinutes()); // 当前分钟
+        // alert(date.getSeconds()); // 当前秒
+
+        // 案例3: 封装一个当前时间的函数
+        function getTime() {
+            var date = new Date();
+            var h = date.getHours();
+            h = h < 10 ? '0' + h : h;
+            var m = date.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            var s = date.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            return '当前时间是:' + h + '点' + m + '分' + s + '秒'
+        }
+        alert(getTime());
+
+        // // 5. 获取时间戳：不是当前的毫秒数，而是当前时间距离1970-1-1的毫秒数
+
+        // // 方法一： valueOf()和getTime()方法实现
+        // var date = new Date();
+        // alert(date.valueOf());
+        // alert(date.getTime());
+
+        // // 方法二：最常用的简单方法:+new Date()返回的就是总的毫秒数
+        // var date1 = +new Date();
+        // alert(date1);
+
+        // // 方法三：H5新增的方法，更简单
+        // alert(Date.now());
+
+        // //  6. 案例：倒计时
+        // function countDown(time) {
+        //     var timeNow = +new Date(); //当前时间戳
+        //     var timeInput = +new Date(time); //输入时间的时间戳
+        //     var times = (timeInput - timeNow) / 1000; // 剩余时间转化成总的秒数
+
+        //     var d = parseInt(times / 60 / 60 / 24); // 天
+        //     d = d < 10 ? '0' + d : d;
+        //     var h = parseInt(times / 60 / 60 % 24); //时
+        //     h = h < 10 ? '0' + h : h;
+        //     var m = parseInt(times / 60 % 60); //分
+        //     m = m < 10 ? '0' + m : m;
+        //     var s = parseInt(times % 60); //秒
+        //     s = s < 10 ? '0' + s : s;
+        //     return d + '天' + h + '时' + m + '分' + s + '秒'
+        // }
+        // alert(countDown('2024-2-18 14:57:00'))
+    </script>
+</body>
+
+</html>

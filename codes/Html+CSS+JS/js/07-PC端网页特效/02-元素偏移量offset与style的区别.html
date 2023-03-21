@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1,
+        .box2 {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            margin: 100px;
+            border: 2px solid green;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2" style="width: 200px;"></div>
+
+
+    <script>
+        //offset与style的区别
+        var box1 = document.querySelector('.box1')
+        var box2 = document.querySelector('.box2')
+
+        // 1. offset获取任何形式引入的样式表，style只能回去行内样式
+        // 2. offset获取的是数字，style获取的是数字加单位
+        // 3. offset获取的是padding+border+width，style获取的仅仅是width
+        console.log(box1.offsetWidth); //244 
+        console.log(box1.style.width); //无法获取，没有行内样式
+        console.log(box2.style.width); //200px
+        // 4. offset只能读取，style能读取也能赋值
+        box1.offsetWidth = 300
+        console.log(box1.offsetWidth); //244 无法赋值
+        box2.style.width = "300px"
+        console.log(box2.style.width); //300px 可以赋值
+    </script>
+</body>
+
+</html>

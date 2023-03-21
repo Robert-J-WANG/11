@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .tab {
+            width: 502px;
+            margin: 100px auto;
+        }
+        
+        .tablist {
+            background-color: #ccc;
+            border: 1px solid #999;
+        }
+        
+        .tablist ul {
+            list-style: none;
+            overflow: hidden;
+        }
+        
+        .tablist ul li {
+            float: left;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+        
+        .tablist ul .current {
+            background-color: red;
+            color: white;
+        }
+        
+        .tabcon {
+            padding: 20px;
+        }
+        
+        .tabcon .item {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tablist">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格包装</li>
+                <li>售后保障</li>
+                <li>商品评价</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tabcon">
+            <div class="item" style="display: block;">商品介绍内容</div>
+            <div class="item">规格包装内容</div>
+            <div class="item">售后保障内容</div>
+            <div class="item">商品评价内容</div>
+            <div class="item">手机社区内容</div>
+        </div>
+    </div>
+
+    <script>
+        // 获取事件元素
+        var tablist = document.querySelector('.tablist');
+        var lis = tablist.querySelectorAll('li');
+        var items = document.querySelectorAll('.item');
+
+        // 注册事件： lis[i].onclick
+        // 执行程序： for循环，给每个li 绑定事件
+        for (var i = 0; i < lis.length; i++) {
+            // 先给每个li添加索引号，用于和下面显示卡模块一一对应
+            lis[i].setAttribute('index', i);
+            //1. 上模块选项卡，点击某一个，当前这个底色为红色，其余不变色（排他思想）。修改类名的方式实现
+            lis[i].onclick = function() {
+                // 排他思想，先给所有的li去除背景色
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = ''
+                }
+                // 再给当前的li添加背景色
+                this.className += ' current';
+                //2. 下面显示卡模块
+                // 获取被点击li的索引号
+                var index = this.getAttribute('index');
+                // 显示index对应的内容
+                // 排他思想
+                // 先让所有的隐藏
+                for (var i = 0; i < items.length; i++) {
+                    items[i].style.display = 'none'
+                }
+                // 让被点击的内容显示
+                items[index].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

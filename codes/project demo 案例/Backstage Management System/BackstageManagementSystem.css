@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+/* 布局部分 */
+
+.container {
+    width: 100vw;
+    min-width: 1792px;
+    height: 100vh;
+    background-color: #7998a8;
+    display: flex;
+    flex-direction: column;
+    /* 隐藏多余部分 */
+    /* overflow: hidden; */
+    /* 产生滚动条 */
+    /* overflow: scroll; */
+    /* 单个方向的滚动条 */
+    /* overflow-x: scroll;
+    overflow-y: scroll; */
+}
+
+header {
+    height: 80px;
+    margin-bottom: 30px;
+    background-color: white;
+    /* 防止盒子被压缩 */
+    flex-shrink: 0;
+}
+
+main {
+    /* background-color: tomato; */
+    flex-grow: 1;
+    display: flex;
+}
+
+aside {
+    background-color: white;
+    width: 280px;
+    margin-right: 30px;
+    /* 防止盒子被压缩 */
+    flex-shrink: 0;
+    border-top-right-radius: 10px;
+}
+
+article {
+    background-color: white;
+    flex-grow: 1;
+    border-top-left-radius: 10px;
+    overflow-y: scroll;
+}
+
+
+/* 内容部分 */
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .logo {
+    width: 300px;
+    height: 80px;
+    /* background-color: pink; */
+    font-size: 26px;
+    color: #666;
+    font-weight: 700;
+    line-height: 80px;
+    margin-left: 30px;
+}
+
+header .login {
+    height: 80px;
+    /* width: 100px; */
+    /* background-color: tomato; */
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+}
+
+header .login img {
+    height: 50px;
+}
+
+header .login .user {
+    margin: 0 15px;
+}
+
+header .login .user p {
+    font-size: 14px;
+    color: #333;
+}
+
+header .login .user span {
+    font-size: 12px;
+    color: #666;
+}
+
+
+/* aside部分 */
+
+main aside nav>ul>li {
+    /* height: 60px; */
+    border-bottom: 2px solid #eff3f5;
+}
+
+main aside nav>ul>li>a {
+    display: block;
+    width: 100%;
+    /* height: 100%; */
+    height: 60px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+main aside nav>ul>li>a::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 21px;
+    background-color: tomato;
+}
+
+main aside nav>ul>li>a::after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: aqua;
+}
+
+main aside nav>ul>li>a>span {
+    width: 120px;
+    font-size: 22px;
+    color: #666;
+}
+
+
+/* nav2部分 */
+
+main aside nav ul .nav2 {
+    display: none;
+}
+
+main aside nav>ul>li:hover .nav2 {
+    display: block;
+}
+
+main aside nav ul .nav2 ul {
+    margin-left: 10px;
+}
+
+main aside nav ul .nav2 ul li {
+    height: 54px;
+    /* border: 1px solid green; */
+    line-height: 54px;
+    padding-left: 70px;
+}
+
+main aside nav ul .nav2 ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 22px;
+    color: #666;
+    text-decoration: none;
+}
+
+main aside nav ul .nav2 ul li:hover {
+    background-color: #337ae5;
+    border-radius: 27px 0 0 27px;
+}
+
+main aside nav ul .nav2 ul li:hover a {
+    color: white;
+}
+
+
+/* article 部分 */
+
+main article {
+    padding: 40px;
+}
+
+main article .header {
+    height: 200px;
+    background-color: #f6f7fa;
+    padding: 20px 60px;
+}
+
+main article .header .group {
+    font-size: 20px;
+    color: #666;
+    margin-right: 80px;
+}
+
+main article .header .group .wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+main article .header .group .wrapper input {
+    width: 210px;
+    height: 40px;
+    border: 0;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 0 20px;
+    margin-right: 40px;
+    box-sizing: border-box;
+}
+
+main article .header .group input::placeholder {
+    font-size: 20px;
+    color: #666;
+}
+
+main article .header .group .wrapper select {
+    width: 210px;
+    height: 40px;
+    border: 0;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 0 20px;
+    margin-right: 40px;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: #666;
+    /* 去掉默认的下标图案 */
+    appearance: none;
+}
+
+main article .header .btn-group {
+    display: flex;
+    justify-content: center;
+}
+
+main article .btn {
+    padding: 10px 30px;
+    border: 1px solid #337ae5;
+    background-color: transparent;
+    font-size: 18px;
+    color: #333;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+main article .btn-blue {
+    background-color: #337ae5;
+    color: white;
+}
+
+
+/* btns 部分 */
+
+main article .btns {
+    margin: 30px 0px;
+}
+
+main article .btns button:first-child {
+    width: 134px;
+}
+
+
+/* table 部分 */
+
+main article table {
+    width: 100%;
+    font-size: 20px;
+    color: #666;
+    border-spacing: 0;
+}
+
+main article table thead {
+    background-color: #f6f7fa;
+}
+
+main article table tr {
+    height: 80px;
+    ;
+}
+
+main article table tr td:first-child {
+    padding-left: 30px;
+}
+
+main article table tr td:last-child {
+    text-align: right;
+    padding-right: 30px;
+}
+
+main article table tr td:last-child span {
+    color: #337ae5;
+    border-right: 1px solid #666;
+    padding: 0 10px;
+}
+
+main article table tr td:last-child span:last-child {
+    border-right: 0;
+}
+
+
+/* footer部分 */
+
+main article footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    color: #666;
+}
+
+main article footer .page {
+    display: flex;
+    align-items: center;
+}
+
+main article footer .page select {
+    width: 100px;
+    height: 24px;
+    border: 1px solid #eff3f5;
+    font-size: 20px;
+    color: #999;
+}
+
+main article footer .page span {
+    display: block;
+    width: 24px;
+    height: 22px;
+    border: 1px solid #666;
+    background-color: #f6f7fa;
+    text-align: center;
+    line-height: 22px;
+    margin: 0 5px;
+}

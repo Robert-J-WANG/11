@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 600px;
+            margin: 100px auto;
+            border: 1px solid #000;
+            border-collapse: collapse;
+        }
+        
+        td,
+        th {
+            border: 1px solid #999;
+            text-align: center;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox" class="cball"></th>
+                <th>名称</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><input type="checkbox"></th>
+                <td>农行金穗</td>
+                <td>1.075</td>
+            </tr>
+            <tr>
+                <th><input type="checkbox"></th>
+                <td>农行金穗</td>
+                <td>1.075</td>
+            </tr>
+            <tr>
+                <th><input type="checkbox"></th>
+                <td>农行金穗</td>
+                <td>1.075</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        //1. 全选和取消全选,让下面所有按钮的checked跟岁全选按钮的checked值
+        //(1).  获取事件元素. 获取thead里面的全选按钮
+        var cball = document.querySelector('.cball');
+        // 获取tbody里面的所有checkbox按钮
+        var tb_cb = document.querySelector('tbody').getElementsByTagName('input');
+
+        //(2).  绑定事件元素属性或内容
+        // cball.onclick
+
+        //(3). 执行程序：
+        cball.onclick = function() {
+                // tbody里面的所有checkbox按钮的checked值与全选按钮的checked值一致
+                for (var i = 0; i < tb_cb.length; i++) {
+                    tb_cb[i].checked = this.checked
+                }
+            }
+            //2. tbody里面的所有checkbox按钮影响全选按钮， 每一个checkbox按钮注册点击事件，只有所有的checkbox按钮注checked时，全选按钮才选择
+        for (var i = 0; i < tb_cb.length; i++) {
+            tb_cb[i].onclick = function() {
+                // flag 控制全选按钮是否选中
+                var flag = true;
+                // 检查每一个是否选中
+                for (var i = 0; i < tb_cb.length; i++) {
+                    if (!tb_cb[i].checked) {
+                        flag = false;
+                        break; // 只要有一个没选中，就退出检查是否选中的循环，提高代码执行效率
+                    }
+                }
+                cball.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

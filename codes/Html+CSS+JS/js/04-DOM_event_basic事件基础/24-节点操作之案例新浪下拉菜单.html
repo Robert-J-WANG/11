@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav {
+            width: 310px;
+            margin: 100px auto;
+        }
+        
+        .nav .item {
+            float: left;
+            width: 100px;
+            text-align: center;
+            border: 1px solid pink;
+        }
+        
+        .nav .item a {
+            display: block;
+            text-decoration: none;
+            height: 30px;
+            line-height: 30px;
+        }
+        
+        .change {
+            background-color: yellowgreen;
+            color: #fff;
+        }
+        
+        .nav .item ul {
+            text-align: center;
+            display: none;
+        }
+        
+        .nav .item ul li {
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li class="item">
+            <a href="#">微博</a>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li class="item">
+            <a href="#">微博</a>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li class="item">
+            <a href="#">微博</a>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        // 鼠标经过item时，显示其第二个子元素ul
+        // 1. 获取元素
+        var nav = document.querySelector('.nav');
+        var lis = nav.children; // 获取了3个item的集合
+        // 2. 注册事件
+        // 3.执行程序
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function() {
+                this.children[0].className += ' change'
+                this.children[1].style.display = 'block';
+            }
+            lis[i].onmouseleave = function() {
+                this.children[0].className = ''
+                this.children[1].style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

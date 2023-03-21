@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id="" value="手机">
+    <script>
+        // 操作样式属性，通过element.style
+        //1.  获取事件元素
+        var input = document.querySelector('input');
+
+        //2.  绑定事件元素属性或内容
+        // input.onfoucs
+        //3. 执行程序：
+        // 获得焦点
+        input.onfocus = function() {
+                if (this.value === '手机') {
+                    this.value = '';
+                }
+                // 内容颜色变深
+                this.style.color = '#333'
+            }
+            // 失去焦点
+        input.onblur = function() {
+            if (this.value === '') {
+                this.value = '手机';
+            }
+            // 内容颜色变浅
+            this.style.color = '#999'
+        }
+    </script>
+</body>
+
+</html>

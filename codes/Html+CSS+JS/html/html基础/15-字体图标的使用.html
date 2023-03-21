@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 在线引入，不好用 -->
+    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <!-- 可以使用本地引入，先将字体图标文件下载到本地文件夹，再引用 -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <style>
+        .fa-cl-black {
+            color: #000;
+        }
+
+        .fa-cl-yellow {
+            color: yellow;
+        }
+
+        .fa-cl-blue {
+            color: blue;
+        }
+
+        .fa-cl-red {
+            color: red;
+        }
+
+        .fa-cl-green {
+            color: green;
+        }
+
+        div {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h4>
+            缩放 fa-2x 与 自定义颜色 fa-cl-black
+        </h4>
+        <i class="fa fa-camera-retro fa-lg fa-cl-black"></i> fa-lg
+        <i class="fa fa-grav fa-2x fa-cl-yellow"></i> fa-2x
+        <i class="fa fa-telegram fa-3x fa-cl-blue"></i> fa-3x
+        <!-- fa-spin 动画旋转 -->
+        <i class="fa fa-snowflake-o fa-4x fa-cl-red fa-spin"></i> fa-4x
+        <i class="fa fa-vcard-o fa-5x fa-cl-green"></i> fa-5x
+    </div>
+
+    <div>
+        <h4>动画 fa-spin</h4>
+        <i class="fa fa-spinner fa-spin fa-cl-red"></i>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <i class="fa fa-refresh fa-spin"></i>
+        <i class="fa fa-cog fa-spin"></i>
+        <i class="fa fa-spinner fa-pulse fa-cl-green"></i>
+    </div>
+
+    <div>
+        <h4>旋转与反转 fa-rotate-90 and fa-flip-horizontal</h4>
+        <i class="fa fa-shield"></i> normal<br>
+        <i class="fa fa-shield fa-rotate-90"></i> fa-rotate-90<br>
+        <i class="fa fa-shield fa-rotate-180 fa-cl-red"></i> fa-rotate-180<br>
+        <i class="fa fa-shield fa-rotate-270"></i> fa-rotate-270<br>
+        <i class="fa fa-shield fa-flip-horizontal"></i> fa-flip-horizontal<br>
+        <i class="fa fa-shield fa-flip-vertical fa-cl-green"></i> icon-flip-vertical
+    </div>
+    <div>
+        <h4>组合使用</h4>
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-square-o fa-stack-2x fa-cl-yellow"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-cl-blue fa-spin"></i>
+        </span>
+        fa-twitter on fa-square-o<br>
+        <span class="fa-stack fa-2x">
+            <i class="fa fa-circle fa-stack-2x fa-cl-red"></i>
+            <i class="fa fa-flag fa-stack-1x fa-inverse fa-cl-green"></i>
+        </span>
+        fa-flag on fa-circle<br>
+    </div>
+</body>
+
+</html>

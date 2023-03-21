@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo" index="1"></div>
+
+    <script>
+        var div = document.querySelector('div');
+        //1. 获取元素属性值的方法
+        //(1). 对元素自带属性（内部属性），使用element.属性，获得属性值
+        var value = div.id;
+        alert(value); // demo
+
+        //(2). 对于自定属性（程序员自定义的属性）,比如上面的index， 使用element.getAttribute('属性名');
+        var inx = div.getAttribute('index');
+        alert(inx); //1
+
+        //2. 设置属性值
+        //(1). 对元素自带属性（内部属性），使用element.属性=属性值
+        div.id = 'test';
+        var value = div.id;
+        alert(value); // test
+
+        //(2). 对于自定属性（程序员自定义的属性）,比如上面的index， 使用element.setAttribute('属性名','属性值');
+        div.setAttribute('index', '2');
+        var inx = div.getAttribute('index');
+        alert(inx); //2
+
+        //3. 删除属性值
+        //  使用element.removeAttribute('属性名');
+        div.removeAttribute('index');
+        console.log(div); //  <div id="demo"></div>
+        div.removeAttribute('id');
+        console.log(div); //  <div></div>
+    </script>
+</body>
+
+</html>

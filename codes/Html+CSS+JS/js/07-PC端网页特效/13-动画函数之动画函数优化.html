@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border-radius: 50%;
+        }
+        
+        span {
+            position: absolute;
+            top: 50px;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <span>夏雨荷</span>
+    <button>点击一下</button>
+    <script>
+        //动画函数封装
+        //1.函数封装一个动画函数,传递2个参数，目标对象和动画结束的参数
+        // 优化：
+        // (1)，不同元素调用函数时，都会定义一个变量timer来存储定时器，每次都会在内存中开辟空间
+        // (2)，利用对象，可以设置变量为对象的一个属性名（obj.timer)，这样不同元素调用函数时，只是给这个属性重新赋值而已，不会在内存中开辟空间
+
+        // function animate(obj, target) {
+        //     var timer = setInterval(function() {
+        //         if (obj.offsetLeft >= target) {
+        //             // 停止动画，本质是清除定时器
+        //             clearInterval(timer)
+        //         }
+        //         obj.style.left = obj.offsetLeft + 5 + 'px';
+        //     }, 30)
+        // }
+        function animate(obj, target) {
+            // (3), 如果给元素添加点击事件，点击一下才执行动画的话，会有bug:每点一次，就会执行一次定时器，连续点击的话，会叠加多个定时器，从而会加快动画的速度
+            //（4），解决方案：点击事件执行是，先清除定时器，在执行定时器
+            clearInterval(obj.timer);
+
+            obj.timer = setInterval(function() {
+                if (obj.offsetLeft >= target) {
+                    // 停止动画，本质是清除定时器
+                    clearInterval(obj.timer);
+                } else {
+                    obj.style.left = obj.offsetLeft + 5 + 'px';
+                }
+
+            }, 30)
+        }
+
+        // 2.获取元素对象
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn = document.querySelector('button');
+
+        // 3.调用动画函数
+        animate(div, 400);
+        btn.addEventListener('click', function() {
+            animate(span, 800);
+        })
+    </script>
+</body>
+
+</html>

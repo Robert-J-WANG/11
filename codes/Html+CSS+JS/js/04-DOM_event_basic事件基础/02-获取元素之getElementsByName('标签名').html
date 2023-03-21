@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>何鲁丽1</li>
+            <li>何鲁丽2</li>
+            <li>何鲁丽3</li>
+            <li>何鲁丽4</li>
+        </ul>
+        <ol>
+            <li>何鲁丽5</li>
+            <li>何鲁丽6</li>
+            <li>何鲁丽7</li>
+            <li>何鲁丽8</li>
+        </ol>
+        <ol id="ol2">
+            <li>何鲁丽555</li>
+            <li>何鲁丽666</li>
+            <li>何鲁丽777</li>
+            <li>何鲁丽888</li>
+        </ol>
+    </div>
+
+    <script>
+        //1. 返回的是获取过来元素对象的集合，以伪数组的形式存储
+        var lis = document.getElementsByTagName('li');
+        console.log(lis); //HTMLCollection(12)
+        console.log(lis[0]); // <li>何鲁丽1</li> 类似数组，获取第一个元素
+        //2. 想要依次打印里面的元素对象，可以采取遍历的方式
+        for (var i = 0; i < lis.length; i++) {
+            console.log(lis[i]);
+        }
+        //3. 如果里面只有一个元素，返回的还是伪数组的形式
+        var ul = document.getElementsByTagName('ul');
+        console.log(ul); //HTMLCollection(1)
+
+        //4. 如果页面中没有此元素，返回的空的为数组形式
+        var p = document.getElementsByTagName('p');
+        console.log(p); //HTMLCollection(0)
+
+        //5.通过element.getElementsByTagName('')可得到指定标签里的字标签对象集合
+        var ol = document.getElementsByTagName('ol'); // ol标签对象的集合
+        console.log(ol[1].getElementsByTagName('li')); // ol[1]表示ol标签对象的集合里的第2个ol标签
+
+        // 更常用的写法是
+        var ol2 = document.getElementById('ol2'); // 通过ID名直接获得第2个ol标签
+        console.log(ol2.getElementsByTagName('li'));
+    </script>
+</body>
+
+</html>

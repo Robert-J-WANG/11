@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //String() 对象
+
+        // 方法的使用
+        // // 1. 根据字符返回位置
+        // var str = 'helloworld';
+
+        // // （1）indexOf('字符') 返回该字符第一次出现的索引号，如果没有，则返回-1
+        // alert(str.indexOf('l')); //2
+        // alert(str.indexOf('a')); //-1
+        // // 也可以返回指定区间，字符出现的位置，indexOf('字符',数字)，从这个数字的位置之后查找
+        // alert(str.indexOf('l', 4)); //8, 从第4位之后开始查找
+        // // （2）lastIndexOf('字符') 返回该字符最后一次出现的索引号，如果没有，则返回-1
+        // alert(str.lastIndexOf('o')); //6
+        // alert(str.lastIndexOf('p')); //-1
+        // // 也可以返回指定区间，字符出现的位置，lastIndexOf('字符',数字)，从这个数字的位置之前查找
+        // alert(str.lastIndexOf('o', 5)); //4
+
+        // // (3) 案例练习：查找某字符出现的位置和次数
+        // var str = 'ahalialuyaoaopa';
+        // var index = str.indexOf('a'); // 字符a出现的位置
+        // var arr = []; // 存储位置的数组
+        // var num = 0 // 字符出现的次数
+        // while (index !== -1) {
+        //     arr.push(index);
+        //     num++;
+        //     index = str.indexOf('a', index + 1); //找到之后，从这个位置下一位从新开始查找，知道找不到，返回-1，结束循环
+        // }
+        // alert('a字符出现的位置分别是' + arr); //a字符出现的位置分别是0,2,5,9,11,14
+        // alert('a字符出现的次数是' + num); // a字符出现的次数是6
+
+        // // 2. 根据位置返回字符
+        // var str = 'ahalialuyaoaopa';
+
+        // //（1）charAt(index) 返回该位置的字符
+        // alert(str.charAt(5)); //a
+        // // 遍历整个字符串的字符
+        // for (var i = 0; i < str.length; i++) {
+        //     console.log(str.charAt(i));
+        // }
+
+        // //（2）charCodeAt(index) 返回相应索引号的字符ASCII码，用于判断用户按下了那个键
+        // alert(str.charCodeAt(5)); //97
+
+        // //（3）str[index] H5新增的方法
+        // alert(str[7]); //u
+        // // (4) 案例练习：统计出现次数最多的字符
+        // var str = 'ahalialuyaoaopa';
+        // var obj = {}; // 创建一个空的对象，用来存储每个字符和其出现的次数
+
+        // // a, 遍历字符串，将字符和出现的次数存储到对象中，以属性名=属性值的形式
+        // for (var i = 0; i < str.length; i++) {
+        //     var chars = str.charAt(i); //遍历字符串里的每个字符，并存储到chars里
+        //     if (obj[chars]) {
+        //         obj[chars]++; // obj对象有属性chars时，则把chars属性的值加一；
+        //     } else {
+        //         obj[chars] = 1; //obj对象没有属性chars时，则把chars存储到对象中，并给其赋值为1；
+        //     }
+        // }
+        // console.log(obj); // 字符和次数以键值对的形式存储到对象中
+        // // b, 遍历对象，找到最多次数和对应的字符
+        // var max = 0; // 用于存储最多次数
+        // var ch = ''; // 用于存储对应的字符
+        // for (k in obj) {
+        //     if (obj[k] > max) {
+        //         max = obj[k];
+        //         ch = k;
+        //     }
+        // }
+        // alert('这个字符串里出现最多的字符是' + ch + '，出现了' + max + '次')
+
+        // //3.拼接与截取
+        // // （1）concat() 拼接
+        // var str = 'hello'
+        // var str2 = 'world'
+        // alert(str.concat(str2)) // helloworld
+
+        // // （2）subString(start,end) 截取
+        // alert(str.substring(1, 3)) //el 不包括第3个
+        // alert(str.concat(str2).substring(3, 7)) //lowo
+
+        //4.替换与转换成数组
+        var str = 'hellohello';
+        //（1）替换 replace('被替换的字符'，'替换为') ,只会替换第一个
+        alert(str.replace('h', 'H')); // Hellohello
+        // 如果需要替换所有的，可利用循环
+        var str1 = 'hellohello';
+        while (str1.indexOf('l') !== -1) {
+            str1 = str1.replace('l', 'r');
+        }
+        alert(str1);
+
+
+        //（2）转换成数组 splite('分隔符')
+        alert(str1.split('')); //h,e,r,r,o,h,e,r,r,o
+
+        var str2 = 'hello,world,hi'
+        alert(str2.split(',')); //hello,world,hi
+        var str3 = 'hello*world*hi'
+        alert(str3.split('*')); //hello,world,hi
+    </script>
+</body>
+
+</html>

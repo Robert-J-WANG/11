@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>div</div>
+    <span>span</span>
+    <p>p</p>
+
+    <script>
+        // 获取span元素节点
+        var span = document.querySelector('span');
+
+        // 操作节点的方法获取，兄弟节点nextSibling和previousSibling
+
+        // (1) 包括所有的类型的
+        console.log(span.nextSibling); //#text
+        console.log(span.previousSibling); //#text
+
+        // (2) 只包括元素类型的节点 nextElementSibling 和 previousElementSibling
+        // 但是有兼容性问题
+        console.log(span.nextElementSibling); // <p>p</p>
+        console.log(span.previousElementSibling); //<div>div</div>
+
+        // (3) 实际开发中，封装一个函数使用
+        function getNextElementSibling(element) {
+            var el = element;
+            while (el = el.nextSibling) {
+                if (el.nodeType === 1) {
+                    return el;
+                }
+            }
+            return null;
+        }
+
+        function getPreviousElementSibling(element) {
+            var el = element;
+            while (el = el.previousSibling) {
+                if (el.nodeType === 1) {
+                    return el;
+                }
+            }
+            return null;
+        }
+
+        var p = getNextElementSibling(span);
+        var div = getPreviousElementSibling(span);
+        console.log(p); // <p>p</p>
+        console.log(div); //<div>div</div>
+    </script>
+</body>
+
+</html>

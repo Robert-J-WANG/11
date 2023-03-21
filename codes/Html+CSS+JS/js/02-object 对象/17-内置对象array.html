@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Array() 对象
+        //  描述
+        // Array()数组对象， 是一个构造函数，必须使用关键词new来调用创建我们需要的数组对象
+        var arr = new Array();
+
+        // // 方法的使用
+        // // 1. 创建数组
+        // // 利用数组字面量
+        // var arr1 = [1, 2, 3];
+        // alert(arr1[0]);
+        // // 利用new关键字和构造函数Array()
+        // var arr2 = new Array(); //创建了一个空的数组
+        // // var arr2 = new Array(2); //2 表示数组的长度为2，里面有2个空的元素
+        // var arr2 = new Array(2, 3); //等价于[2,3],表示里面有2个元素时2和3
+        // alert(arr2);
+
+        // //2. 检查是否为数组
+        // var arr3 = new Array();
+        // var obj = new Object();
+        // // 利用运算符 instanceof 
+        // alert(arr3 instanceof Array); // ture
+        // alert(obj instanceof Array); // false
+        // alert(obj instanceof Object); // ture
+        // // H5新增的方法 Array.isArray()
+        // alert(Array.isArray(arr3)); // ture
+        // alert(Array.isArray(obj)); // false
+
+        // //案例：判断数组并反转数组
+        // function reverseArr(arr) {
+        //     // if (arr instanceof Array) { // 或者
+        //     if (Array.isArray(arr)) {
+        //         var arr1 = new Array;
+        //         for (var i = arr.length - 1; i >= 0; i--) {
+        //             arr1[arr1.length] = arr[i]
+        //         }
+        //         return '[' + arr1 + ']'
+        //     } else {
+        //         return '请输入正确的数组形式,比如[1,2,3]'
+        //     }
+        // }
+        // var result = reverseArr([1, 2, 3]);
+        // alert(result);
+
+        // //3. 添加数组元素
+        // // 在数组末尾添加元素push(),可添加一个或多个数组元素
+        // var arr4 = new Array(1, 2, 3);
+        // arr4.push(4); // 末尾添加一个元素
+        // alert(arr4.push(4)); // 返回值是新的数组的length， 这里是5
+        // alert(arr4);
+
+        // arr4.push(5, 'hello', arr4[arr4.length - 1]); // 添加多个元素
+        // alert(arr4);
+        // // 在数组开头添加元素 unshift(),可添加一个活多个数组元素
+        // arr4.unshift(0); // 开头添加一个元素
+        // alert(arr4.unshift(4)); // 返回值是新的数组的length， 这里是10
+        // alert(arr4);
+        // arr4.unshift(5, 'hello', arr4[arr4.length - 1]); // 添加多个元素
+        // alert(arr4);
+
+        // //4. 删除数组元素
+
+        // // pop(),删除数组最后一个元素，并返回这个值,()里为空,不跟元素
+        // var arr5 = [1, 2, 3, 4, 'hello', 'world'];
+        // arr5.pop(); // 删除'world'
+        // alert(arr5); //[1, 2, 3, 4, 'hello'];
+        // alert(arr5.pop()); //删除'hello', 并返回hello
+        // alert(arr5); //[1, 2, 3, 4];
+
+        // // shift(),删除数组第一个元素，并返回这个值,()里为空,不跟元素
+        // arr5.shift(); // 删除 1
+        // alert(arr5); //[2, 3, 4];
+        // alert(arr5.shift()); //删除 2, 并返回2
+        // alert(arr5); //[3, 4];
+
+        // // 5. 案例，数组重组：把大于2000的元素删除，剩余的元素放到一个新素组里
+        // var wage = [1500, 1200, 3000, 1660, 1000, 4000];
+        // var newWage = [];
+        // for (var i = 0; i < wage.length; i++) {
+        //     if (wage[i] < 2000) {
+        //         // newWage[newWage.length] = wage[i]; //// 原先的方法
+        //         newWage.push(wage[i]);
+        //     }
+        // }
+        // alert(newWage); //  [1500, 1200, 1660, 1000];
+
+        // // 6.数组排序
+        // // （1）反转数组 reverse()
+        // var arr6 = ['hello', 'world', 'happy', 'new year'];
+        // arr6.reverse();
+        // alert(arr6); // new year,happy,world,hello
+
+        // // （2）数组排序（冒泡排序）sort()
+        // var arr7 = [13, 4, 77, 7, 11];
+        // arr7.sort();
+        // alert(arr7); // 11,13,4,7,77 并没有严格按照冒泡排序
+
+        // // 解决方案： sort()里放一个自定义函数
+        // arr7.sort(
+        //     function(a, b) {
+        //         // return a - b; // 升序排列
+        //         return b - a; // 降序排列
+        //     }
+        // );
+        // alert(arr7); // 77,13,11,7,4
+
+        // // 7. 返回数组中某元素的索引号
+        // var arr8 = ['red', 'green', 'blue', 'black', 'green'];
+
+        // // （1）indexOf(数组元素) 返回该元素第一次出现的索引号，如果没有，则返回-1
+        // alert(arr8.indexOf('green')); //1
+        // alert(arr8.indexOf('white')); //-1
+
+        // // （2）lastIndexOf(数组元素) 返回该元素最后一次出现的索引号，如果没有，则返回-1
+        // alert(arr8.lastIndexOf('green')); //4
+        // alert(arr8.lastIndexOf('red')); //0
+        // alert(arr8.lastIndexOf('white')); //-1
+
+        // //8. 案例：数组元素取重：indexOf()返回值为-1，和push()添加元素法
+        // // 思路：创建空的心数组，用于存储取重后的元素，遍历旧数组，拿旧数组的元素取比较新数组的元素，
+        // // 如果此元素不在新数组中（indexOf(目标元素)的返回值为-1），则添加到新数组值push();
+
+        // // var arr9 = ['a', 'b', 'c', 'x', 'y', 'b', 'a', 'd', 'c'] //给定的旧数组
+        // // var newArr = [];
+        // // for (var i = 0; i < arr9.length; i++) {
+        // //     if (newArr.indexOf(arr9[i]) == -1) {
+        // //         newArr.push(arr9[i]);
+        // //     }
+        // // }
+        // // alert(newArr);
+
+        // // 封装一个取重函数
+        // function getUnique(arr) {
+        //     var newArr = [];
+        //     for (var i = 0; i < arr.length; i++) {
+        //         if (newArr.indexOf(arr[i]) == -1) {
+        //             newArr.push(arr[i]);
+        //         }
+        //     }
+        //     return newArr;
+        // }
+        // var myArr = ['a', 'b', 'p', 'f', 'w', 'b', 'a', 'd', 'c'];
+        // alert(getUnique(myArr));
+
+        // 9. 数组转换成字符串
+        var arr10 = [1, 2, 3, 'pink', 'blue', 4, 5]
+            // （1）toString()
+        console.log(arr10); // Array(7)
+        var word = arr10.toString();
+        console.log(word); //1,2,3,pink,blue,4,5
+
+        // （2）jion('分隔符') 分隔符默认是逗号
+        var word = arr10.join()
+        alert(word); //1,2,3,pink,blue,4,5
+        var word2 = arr10.join('-');
+        alert(word2); //1-2-3-pink-blue-4-5
+        var word3 = arr10.join(' ');
+        alert(word3); //1 2 3 pink blue 4 5
+    </script>
+</body>
+
+</html>

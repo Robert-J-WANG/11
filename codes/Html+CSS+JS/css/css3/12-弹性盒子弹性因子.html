@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 1000px;
+            height: 300px;
+            text-align: center;
+            line-height: 200px;
+            border: 1px solid red;
+            /* 块级弹性盒子 */
+            display: flex;
+            /* 容器宽度大于项目总宽度时，如果如果想填满整个容器，
+            可设置单独项目的弹性比例因子flex-grow,
+            默认值为0，
+            来控制单个项目的宽度。
+            值越大，项目宽度越大 */
+           
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid green;
+            box-sizing: border-box;
+        }
+        .box:nth-child(1){
+            flex-grow: 1;
+        }
+        .box:nth-child(2){
+            flex-grow: 3;
+        }
+        .box:nth-child(3){
+            flex-grow: 5;
+        }
+        .box:nth-child(4){
+            flex-grow: 7;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">flex-grow: 1</div>
+        <div class="box">flex-grow: 3</div>
+        <div class="box">flex-grow: 5</div>
+        <div class="box">flex-grow: 7</div>
+       
+    </div>
+    <span> /* 容器宽度大于项目总宽度时，如果如果想填满整个容器，
+        <br>
+        可设置单独项目的弹性比例因子flex-grow,
+        来控制单个项目的宽度。
+        <br>
+        值越大，项目宽度越大 */</span>
+</body>
+
+</html>

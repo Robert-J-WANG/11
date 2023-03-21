@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 100px auto;
+        }
+        
+        li {
+            float: left;
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+            list-style: none;
+            background-image: url(images/sprite.png);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        // 操作样式属性，通过element.style
+        //1.  获取事件元素
+        var lis = document.querySelectorAll('li');
+        //2.  绑定事件元素属性或内容
+        // lis.style
+        //3. 执行程序：for循环，依次设置背景图片位置
+        for (var i = 0; i < lis.length; i++) {
+            var index = i * 60
+                // lis[0].style.backgroundPosition = '60px 0'
+                // lis[1].style.backgroundPosition = '120px 0'
+            lis[i].style.backgroundPosition = index + 'px 0'
+        }
+    </script>
+</body>
+
+</html>

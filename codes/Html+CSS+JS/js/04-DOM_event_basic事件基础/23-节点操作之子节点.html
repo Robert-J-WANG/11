@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>何鲁丽1</li>
+            <li>何鲁丽2</li>
+        </ul>
+        <ol>
+            <li>何鲁丽3</li>
+            <li>何鲁丽4</li>
+            <li>何鲁丽5</li>
+            <li>何鲁丽6</li>
+        </ol>
+    </div>
+
+    <script>
+        // 获取ul里的所有li
+        var ul = document.querySelector('ul');
+        // 操作元素的方法获取子元素li
+        var lis = ul.querySelectorAll('li');
+        console.log(lis);
+        // 操作节点的方法获取，子节点
+        // 1. parentNode.childNodes, 获取所有子节点，包括文本节点（空格等）
+        console.log(ul.childNodes); // 5个节点 NodeList(5) [text, li, text, li, text]
+
+        // 2. parentNode.children，只获取元素节点，推荐使用
+        console.log(ul.children); // 2个节点 HTMLCollection(2) [li, li]
+
+        //3. 获取第一个子元素节点和最后一个子元素节点，
+        // 获取ol里的li
+        var ol = document.querySelector('ol');
+
+        // (1) 包括所有的类型的第一个子节点和最后一个子节点 firstChild 和lastChild
+        console.log(ol.firstChild); //#text
+        console.log(ol.lastChild); //#text
+        // (2) 只包括元素类型的第一个子节点和最后一个子节点 firstElementChild 和 lastElementChild 
+        // 但是有兼容性问题
+        console.log(ol.firstElementChild); // <li>何鲁丽3</li>
+        console.log(ol.lastElementChild); //<li>何鲁丽6</li>
+        // (3) 实际开发中，只包括元素类型的第一个子节点和最后一个子节点 parentNode.children[0] 
+        // 和 parentNode.children[parentNode.children.length-1] 
+
+        console.log(ol.children[0]); // <li>何鲁丽3</li>
+        console.log(ol.children[ol.children.length - 1]); //<li>何鲁丽6</li>
+    </script>
+</body>
+
+</html>

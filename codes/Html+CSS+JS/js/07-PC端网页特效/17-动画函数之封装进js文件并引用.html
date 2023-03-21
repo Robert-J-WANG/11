@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sliderbar {
+            position: fixed;
+            top: 300px;
+            right: 0px;
+            height: 40px;
+            line-height: 40px;
+        }
+        
+        span {
+            display: inline-block;
+            width: 40px;
+            text-align: center;
+            background-color: blue;
+        }
+        
+        .con {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+            background-color: blueviolet;
+            z-index: -1;
+        }
+    </style>
+
+    <!-- 引入动画函数 -->
+    <script src="animate.js"></script>
+
+</head>
+
+<body>
+    <div class="sliderbar">
+        <span> << </span>
+        <div class="con">问题反馈</div>
+    </div>
+
+    <script>
+        var sliderbar = document.querySelector('.sliderbar')
+        var con = document.querySelector('.con')
+
+        sliderbar.addEventListener('mouseenter', function() {
+            animate(con, -160);
+            sliderbar.children[0].innerHTML = '>>'
+        })
+        sliderbar.addEventListener('mouseleave', function() {
+            animate(con, 40);
+            sliderbar.children[0].innerHTML = '<<'
+        })
+    </script>
+</body>
+
+</html>

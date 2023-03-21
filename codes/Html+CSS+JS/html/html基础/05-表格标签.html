@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格标签</title>
+</head>
+
+<body>
+    <!-- 表格标签 -->
+    <!-- table 代表一个表格
+        boder； 表格的边框， tr,td 不起作用
+        width:表格的宽度
+        height:表格的高度
+        align:表格的对齐方式，
+        bgcolor:表格的背景颜色
+        cellspacing:表格中所有单元格与单元格之间的间距，
+        cellpadding:所有单元格内容预期边框的间距，
+    
+    -->
+    <!-- tr 每一行 
+        width:tr设置宽度无效
+        height: 可以设置某单个一行的高度
+        align:某一行元素对齐方式，
+        bgcolor:某一行的背景颜色
+       
+    -->
+    <!-- td /th(表头) 每一列 
+        width:可以设置单独一个单元格的宽度,会影响整列的宽度
+        height； 可以设置单独一个单元格的高度度,会影响整行的宽度
+        align:某一个单元格（列）元素对齐方式，
+        bgcolor:某一个单元格的背景颜色
+    -->
+    <table border="1px" width="800px" height="200px" align="center" bgcolor="skyblue" cellspacing="0" cellpadding="20px">
+        <tr height="20px" align="right" bgcolor="yellow" >
+            <th>name</th>
+            <th>age</th>
+            <th>gender</th>
+            <th>hobby</th>
+        </tr>
+        <tr>
+            <td width="300px" height="60px" align="center" bgcolor="darkred" >Adm</td>
+            <td >18</td>
+            <td>male</td>
+            <td>reading</td>
+        </tr>
+        <tr>
+            <td>Anna</td>
+            <td>30</td>
+            <td>female</td>
+            <td>writing</td>
+        </tr>
+    </table>
+
+    <!-- 表格的嵌套 表格可以进行嵌套，但是内层表格必须放在外层表格的单元格里（td),不能破坏表格的基本结构-->
+    <!-- 表格的合并  单元格之间的合并， colspan水平方向，跨列合并，rowspan垂直方向，跨行合并-->
+
+    <table border="1px" width="800px" height="500px" align="center" cellspacing="10px">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>
+                <table border="1px" bgcolor="red">
+                    <tr>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                    </tr>
+                   
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table border="1px" bgcolor="green">
+                    <tr>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                    </tr>
+                </table>
+            </td>
+            <td rowspan="2">12跨行合并</td>
+            <td colspan="2">13跨列合并</td>
+            <!-- <td>14</td> -->
+            <td rowspan="2">15跨行合并</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <!-- <td>22</td> -->
+            <td >23</td>
+            <td>24</td>
+            <!-- <td>25</td> -->
+        </tr>
+    </table>
+</body>
+
+</html>

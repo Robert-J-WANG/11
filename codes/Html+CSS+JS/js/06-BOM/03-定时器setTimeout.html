@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script>
+        // 定时器setTimeout
+        // 语法规范： window.setTimeout(调用函数, 延迟时间)
+        // 1.window可省略
+        // 2. 延迟时间单位时毫秒，可以省略，省略的表示0，不延迟
+        //3. 调用函数，可以直接写函数
+        setTimeout(function() {
+            alert('时间到了')
+        }, 2000); //延迟2秒
+        // 也可以写函数名,
+        setTimeout(callback, 3000); //延迟3秒
+        function callback() {
+            alert('爆炸了')
+        }
+        // 4. 页面中有多个定时器，通常给定时器加不同的标识符（名字）
+        var timer1 = setTimeout(callback, 5000); //延迟5秒
+        var timer2 = setTimeout(callback, 7000); //延迟7秒
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

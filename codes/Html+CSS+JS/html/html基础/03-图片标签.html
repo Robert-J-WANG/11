@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片标签</title>
+</head>
+<body>
+    <!-- 图片标签 -->
+    <!-- src="" 图片的文件所在的路径，图片可以使网络图片，也可以是本地图片。
+            绝对路径：以http开头的网络图片路径，或者以本地磁盘位开头的路径
+            相对路径：以某个文件夹为参考。在开发中，以当前文件夹出发找到目标文件路径。返回上一级../加文件名，返回多个上一级就使用多个../
+    -->
+   <!-- alt=“”  图片加载失败是，显示的解释性文字-->
+   <!-- title=“”  图片提示性文字，鼠标放到图片上，文字会显示-->
+   <!-- width=“”  设置图片的宽度-->
+   <!-- height=“”  设置图片的高度-->
+   <!-- 注意，宽度和高度，只需设置一个值，会等比例缩放。如果2个属性都设置，图片会被拉伸-->
+
+    <!-- 绝对路径 -->
+    <img src="https://huisdierengids.com/wp-content/uploads/2021/08/fisne-lappenhond.jpg" alt=""> 
+    <!-- 相对路径  -->
+    <img src="images/img1.webp" alt="">
+    <img src="images/img4.webp" alt="我是解释性文字，因为找不到这找图片">
+    <img src="images/img2.jpeg" alt="我是解释性文字" title="cat" width="600px">
+    <img src="images/img2.jpeg" id="image2">
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="height: 3000px;">
+    <script>
+        //  鼠标事件对象 MouseEvent
+        document.addEventListener('click', function(e) {
+            //1.client 浏览器可视区的坐标
+            alert(e.clientX);
+            alert(e.clientY);
+            //2. page 相对于页面文档的坐标
+            alert(e.pageX);
+            alert(e.pageY);
+            //3. screen 相对于设备屏幕的坐标
+            alert(e.screenX);
+            alert(e.screenY);
+        })
+    </script>
+</body>
+
+
+
+</html>

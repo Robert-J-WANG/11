@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div>
+        <ul>
+            <li>产品</li>
+            <li>首页</li>
+        </ul>
+    </div>
+    </div>
+
+    <script>
+        // 1. 通过类名 getElementsByClassName('类名'); 获得元素对象的集合，伪数组的形式存储
+        var boxes = document.getElementsByClassName('box');
+        console.log(boxes); // HTMLCollection(2) [div.box, div.box] 
+        // 2. 通过选择器querySelector('选择器名') 获得指定选择器的第一个标签对象， 选择器名可以是标签名，或其他
+        // 需要加符号，比如 .box, #logo
+        var box1 = document.querySelector('div'); //  <div class="box">box1</div> 第一个div标签
+        console.log(box1);
+        var bx = document.querySelector('.box'); //  <div class="box">box1</div> 第一个类名为box的标签
+        console.log(bx);
+
+        // 3, 通过选择器querySelectorAll('选择器名') 获得指定选择器的所有标签对象,伪数组的形式存储
+        var lis = document.querySelectorAll('li');
+        console.log(lis); // NodeList(2) [li, li]
+
+        var bx = document.querySelectorAll('.box');
+        console.log(bx); // NodeList(2) [div.box, div.box]
+    </script>
+</body>
+
+</html>

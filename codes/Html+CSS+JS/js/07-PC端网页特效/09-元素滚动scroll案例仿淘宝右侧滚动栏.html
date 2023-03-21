@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .w {
+            width: 1000px;
+            margin: 0 auto;
+        }
+        
+        body {
+            position: relative;
+        }
+        
+        .slider-bar {
+            position: absolute;
+            top: 300px;
+            right: 0px;
+            width: 80px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .header {
+            height: 170px;
+            background-color: #b03434;
+        }
+        
+        .banner {
+            height: 300px;
+            background-color: #4db034;
+        }
+        
+        .main {
+            height: 1000px;
+            background-color: #3432d6;
+        }
+        
+        span {
+            position: absolute;
+            bottom: 0;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-bar">
+        <span class="goBack"> 返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体区域</div>
+    <script>
+        //1. 获取元素
+        var sliderbar = document.querySelector('.slider-bar');
+        var banner = document.querySelector('.banner');
+        var main = document.querySelector('.main');
+        var goBack = document.querySelector('.goBack');
+
+        // 获取banner头部的大小 offsetTop
+        var bannerTop = banner.offsetTop;
+        // console.log(bannerTop); //300
+
+        // 获取slider-bar的头部大小sliderbar.offsetTop
+        console.log(sliderbar.offsetTop); //200
+        // 设置 滚动后 slider-bar固定的位置
+        var sliderbarTop = sliderbar.offsetTop - bannerTop;
+
+        //2. 添加事件，页面滚动scroll
+        document.addEventListener('scroll', function() {
+            // console.log(11);
+            // window.pageYOffset 页面被卷去的头部
+            // console.log(window.pageYOffset);
+            //3.当页面被卷去的头部大于等于了banner的头部大小，此时，侧边栏就改为固定定位，其他为绝对定位
+            if (window.pageYOffset >= bannerTop) {
+                sliderbar.style.position = 'fixed';
+                // 设置 滚动后 slider-bar固定的位置
+                sliderbar.style.top = sliderbarTop + 'px'
+            } else {
+                sliderbar.style.position = 'absolute';
+                // 恢复slider-bar绝对定位的位置
+                sliderbar.style.top = '300px';
+            }
+            //4. 当页面被卷去的头部大于等于了mian的头部大小，此时，显示goback内容
+            if (window.pageYOffset >= main.offsetTop) {
+                goBack.style.display = 'block';
+            } else {
+                goBack.style.display = 'none';
+            }
+        })
+    </script>
+</body>
+
+</html>
